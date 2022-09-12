@@ -6,14 +6,16 @@ $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
 $this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
 if (isset($stylesheet)) {
-    $this->headLink()->prependStylesheet($this->assetUrl("css/$stylesheet.css"));    
+    $this->headLink()->prependStylesheet($this->assetUrl("css/$stylesheet.css"));
 } else {
     $this->headLink()->prependStylesheet($this->assetUrl('css/default.css'));
 }
+$this->headLink()->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/foundation/foundation.min.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+$this->headScript()->appendFile($this->assetUrl('js/wsu.js'));
 $this->trigger('view.layout');
 $this->jsTranslate();
 $title = $this->pageTitle($site->title());

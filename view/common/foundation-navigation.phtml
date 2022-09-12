@@ -7,9 +7,9 @@ $container = $this->container;
 $layoutAttributes = [
   'dropdown' => 'class="dropdown menu" data-dropdown-menu',
   'vertical' => 'class="vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true"',
-]
+];
 ?>
-<ul <?php echo $layoutAttributes[$layout]; ?>>
+<ul <?php echo $layoutAttributes[$layout]; ?> test-data="test">
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Laminas\Navigation\Page\Mvc */ ?>
