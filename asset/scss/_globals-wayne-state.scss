@@ -1,0 +1,33 @@
+@import "util/util";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+$foundation-palette: (
+        primary: #ffcc00,
+        secondary: #c5f4f2,
+        success: #3adb76,
+        warning: #ffae00,
+        alert: #cc4b37,
+);
+
+$wayne-palette: (
+        blue-001: #1EBED3,
+        brown-001: #74613D,
+        gray-001: #777A7B,
+        gray-002: #333,
+        gray-003: #666,
+        gray-004: #EDEFEE,
+        grey-005: #777A7B,
+        green-001: #0C5449,
+        green-002: #5DBC51,
+        orange-001: #FF8900,
+        purple-001: #BE1EC4,
+        yellow-001: #FFCC33
+);
+
+$global-font-size: 18px;
+// Body
+$body-font-family: 'Lato', sans-serif;
+// Header
+$header-font-family: 'Lato', sans-serif;
+// Table
+$table-border: none;
