@@ -24,7 +24,7 @@ body {
 }
 
 header {
-  border-bottom: 2px solid map-get($foundation-palette, gray-003);
+  border-bottom: 2px solid #e6e6e6;
   padding-right: (2 * $global-padding) $global-padding;
   padding-left: (2 * $global-padding) $global-padding;
   @include xy-grid-container;
@@ -142,7 +142,16 @@ i .fa {
   form {
     margin-bottom: 0;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  
+  .input-group-button button[type="submit"] {
+    background: url(../img/search_icon.png) no-repeat;
+    height: 30px;
+    width: 30px;
+    margin-left: -39px;
+    border: 0px;
+    margin-top: 7px;
   }
 
   .top-bar-right {
@@ -162,9 +171,6 @@ i .fa {
     margin-right: 0;
   }
 
-  .input-group-button {
-    visibility: hidden;
-  }
 }
 
 .page-title {
@@ -341,6 +347,10 @@ i .fa {
   }
 }
 
+.bridge-the-gap {
+  content: url('../img/main/school_teacher.png')
+}
+
 .lesson-plan-title-extra,
 .breadcrumbs a {
   color: map-get($wayne-palette, brown-001);
@@ -348,11 +358,6 @@ i .fa {
 
 a {
   color: map-get($wayne-palette, brown-001);
-
-  &:hover {
-    font-weight: 900;
-    text-decoration: underline;
-  }
 }
 
 
