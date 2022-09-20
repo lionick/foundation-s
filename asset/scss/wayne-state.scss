@@ -57,7 +57,7 @@ textarea {
   padding: 0 20px;
 }
 
-[type] {
+.search [type] {
   border-radius: 20px;
 }
 
@@ -283,6 +283,17 @@ i .fa {
       min-height: 12em;
       min-width: 9em;
       background-size: cover;
+      position: relative;
+    }
+
+    .thumbnail-item-image a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+    }
+    .wsu-badge a {
+      color: #fff;
     }
 
     &.history {
@@ -476,6 +487,41 @@ footer {
   }
   .dan-golodner {
     content: url('../img/team/dan_golodner.jpg');
+  }
+}
+
+// FACETED BROWSE PAGE
+
+.faceted-browse-page { 
+  #container a.resource-link img{
+    height: 6em;
+    width: 5.5em;  
+  }
+  .permalink.button {
+    display: none;
+  }
+  
+  input.full-text {
+    width: 80%!important;
+  }
+
+  [type='submit'] {
+    margin-top: 0;
+  }
+}
+
+// PAGINATION 
+
+.omeka-pagination {
+  .page-input-top {
+    text-align: center;
+  }
+}
+
+// MEDIA VIEW
+.media {
+  hr {
+    margin:0 0 2rem 0;
   }
 }
 @media (max-width: 874px) {

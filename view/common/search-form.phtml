@@ -14,7 +14,7 @@ $searchValue = $this->escapeHtml($this->params()->fromQuery('fulltext_search', '
 
 <form action="<?php echo $this->escapeHtml($searchAction); ?>" id="search-form" class="input-group">
     <input type="text" name="fulltext_search" value="<?php echo $searchValue; ?>"
-        placeholder="<?php echo $translate('Search'); ?>"
+        placeholder="<?php echo $translate('Search site...'); ?>"
         aria-label="<?php echo $translate('Search'); ?>" class="input-group-field">
     <div class="input-group-button">
     <button type="submit" class="button"></button>
