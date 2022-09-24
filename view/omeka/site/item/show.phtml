@@ -1,5 +1,8 @@
 <?php
 $translate = $this->plugin('translate');
+$tags = $this->plugin('showTags');
+
+        
 $escape = $this->plugin('escapeHtml');
 $this->headLink()->appendStylesheet($this->assetUrl('css/resource-page-blocks.css', 'Omeka'));
 $this->htmlElement('body')->appendAttribute('class', 'item resource show');
@@ -59,7 +62,10 @@ $rightSidebarHasBlocks = $rightSidebarBlockContent->hasBlocks();
 
         <?php if ($rightSidebarHasBlocks): ?>
         <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-            <?php echo $rightSidebarBlockContent->getBlocks(); ?>
+            <?php 
+                echo $rightSidebarBlockContent->getBlocks(); 
+                echo $tags($item); 
+            ?>
         </div>
         <?php endif; ?>
     </div>
