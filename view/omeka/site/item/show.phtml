@@ -1,5 +1,8 @@
 <?php
 $translate = $this->plugin('translate');
+$tags = $this->plugin('showTags');
+
+        
 $escape = $this->plugin('escapeHtml');
 $this->htmlElement('body')->appendAttribute('class', 'item resource show');
 $embedMedia = $this->siteSetting('item_media_embed', false);
@@ -159,6 +162,12 @@ if ($galleryDisplay) {
         <div id="item-linked">
             <h3><?php echo $translate('Linked resources'); ?></h3>
             <?php echo $subjectValues; ?>
+        <?php if ($rightSidebarHasBlocks): ?>
+        <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+            <?php 
+                echo $rightSidebarBlockContent->getBlocks(); 
+                echo $tags($item); 
+            ?>
         </div>
         <?php endif; ?>
         
