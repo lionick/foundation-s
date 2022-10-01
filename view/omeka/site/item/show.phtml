@@ -1,8 +1,6 @@
 <?php
 $translate = $this->plugin('translate');
-$tags = $this->plugin('showTags');
-
-        
+$tags = $this->plugin('showTags');       
 $escape = $this->plugin('escapeHtml');
 $this->htmlElement('body')->appendAttribute('class', 'item resource show');
 $embedMedia = $this->siteSetting('item_media_embed', false);
@@ -164,9 +162,9 @@ if ($galleryDisplay) {
             <?php echo $subjectValues; ?>
         <?php if ($rightSidebarHasBlocks): ?>
         <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-            <?php 
-                echo $rightSidebarBlockContent->getBlocks(); 
-                echo $tags($item); 
+            <?php
+                echo $rightSidebarBlockContent->getBlocks();
+                echo $tags($item);
             ?>
         </div>
         <?php endif; ?>

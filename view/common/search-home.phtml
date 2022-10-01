@@ -1,0 +1,33 @@
+<?php
+
+$search = $this->plugin('facetSelect');
+$categorySearch = $this->ListCategory();
+$translate = $this->plugin('translate');
+//var_dump($search);
+// Audience Education Level
+$res = $categorySearch->getValueValues("items", 46, "eq", array("item_set_id" => array(7285), "site_id" => 21));
+
+foreach ($res as $value) {
+    $edu_level[]["value"] = $value["label"];
+}
+echo $search("dcterms_educationLevel", $edu_level, array("placeholder"=> 'Education Level')); // look at search/facet-select.phtml
+// Subject
+$res = $categorySearch->getValueValues("items", 3, "eq", array("item_set_id" => array(7285), "site_id" => 21));
+foreach ($res as $value) {
+    $subject[]["value"] = $value["label"];
+}
+echo $search("dcterms_subject_ss", $subject, array("placeholder"=> 'Subject')); // look at search/facet-select.phtml
+//var_dump($res);
+// $values[0]["value"] = "History";
+// $values[1]["value"] = "Economics";
+// $values[3]["value"] = "Natural Sciences";
+// echo $search("test", $values); 
+?>
+<!-- <form action="/" class="search-form" class="input-group">
+<input type="text" name="fulltext_search" 
+    placeholder="<?php echo $translate('Search site...'); ?>"
+    aria-label="<?php echo $translate('Search'); ?>" class="input-group-field">
+<div class="input-group-button">
+<button type="submit" class="button"></button>
+</div>
+</form> -->

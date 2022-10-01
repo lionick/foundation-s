@@ -510,13 +510,56 @@ footer {
   }
 }
 
-// PAGINATION 
-
-.omeka-pagination {
-  .page-input-top {
-    text-align: center;
+.search-facets {
+  flex-basis: 46% !important;
+  padding: 0 2.5em 0 0em!important;
+  h3 {
+    padding-top:0;
   }
 }
+.search-results {
+  .resource-list {
+   margin: 0;
+  }
+
+  .resource-list.grid {
+    .resource {
+      border-bottom: 0;
+      padding-top: 0 !important;
+    }
+  }
+  
+  h3 {
+    padding: 1em 0 0em;
+  }
+  width: 100%;
+}
+// ADVANCED SEARCH 
+#advanced-search-form {
+  .inputs button[type="submit"] {
+    float:none;
+  }
+
+}
+
+.search-results-part.search-results-header {
+  .omeka-pagination {
+    .page-input-top {
+      text-align: center;
+    }
+    margin-left: 0;
+    width: auto;
+  }
+  .search-pagination-per-page.as-url, .search-results-display {
+    display: flex;
+    align-items: center;
+  }
+  label {
+    padding-right: 0.5em;
+  }
+
+}
+
 
 // MEDIA VIEW
 .media {
