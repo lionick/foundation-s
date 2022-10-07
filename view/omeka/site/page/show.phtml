@@ -31,7 +31,7 @@ if ($activePage):
 <?php $this->trigger('view.show.before'); ?>
 <?php 
  // Only for home page
- if ($nav->findActive($container)["page"]->getParams()['page-slug'] == "home" && $nav->findActive($container)["page"]->getParams()['site-slug'] == "archives"):
+ if (!empty($nav->findActive($container)["page"]) && $nav->findActive($container)["page"]->getParams()['page-slug'] == "home" && $nav->findActive($container)["page"]->getParams()['site-slug'] == "archives"):
     echo $this->partial('common/search-home'); 
  endif;
 ?>

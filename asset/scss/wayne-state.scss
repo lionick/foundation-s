@@ -158,6 +158,9 @@ i .fa {
     .search {
       width: 100%;
       margin-left: $global-margin;
+      margin-bottom: 0.5em;
+      margin-top: 1em;
+
     }
 
     flex: 0 1 auto;
@@ -171,6 +174,14 @@ i .fa {
     margin-right: 0;
   }
 
+}
+
+.site-title {
+  img {
+    max-height: 5.5rem;
+    width: auto;
+    margin: 0.5rem 0;
+  }
 }
 
 .page-title {
@@ -255,6 +266,7 @@ i .fa {
 .select-dropdowns {
    display: flex;
    clear: both;
+   margin-top: 1em;
 }
 
 .page.home {
