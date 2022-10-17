@@ -287,6 +287,10 @@ i .fa {
     width: fit-content;
   }
 
+  .chosen-container-single:nth-child(2) {
+    margin-right: 1em!important;
+  }
+  
   .chosen-container-single {
     .chosen-single {
       background: none;
@@ -306,9 +310,7 @@ i .fa {
         height: 100%;
       }  
     }
-    .chosen-single:first-child {
-      margin-right: 1em;
-    }
+    
   }
   .chosen-with-drop {
     .chosen-single {
