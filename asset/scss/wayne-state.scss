@@ -105,6 +105,10 @@ h4, .h4 {
   font-weight: 900;
 }
 
+body:not(.browse) #content {
+  padding: 2rem 0 0rem;
+}
+
 .detroit_rebirth,
 .lesson_plans {
   #blocks {
@@ -262,6 +266,7 @@ i .fa {
   }
 }
 
+
 // Home VIEW
 .select-dropdowns {
    display: flex;
@@ -361,7 +366,7 @@ i .fa {
       display: block;
       position: absolute;
     }
-    
+
     .wsu-badge a {
       color: #fff;
     }
@@ -452,12 +457,24 @@ label,
   color: $black;
 }
 
+.resource.show .grid-x {
+  padding: 0;
+}
+
 footer {
   padding: unset;
 
   .align-center {
     text-align: center;
   }
+
+  .site-title img {
+    max-height: 2.5rem;
+    width: auto;
+    margin: 0.5rem 0;
+  }
+
+
 
   .acknowledgement-container {
     .grid-x {
@@ -520,7 +537,7 @@ footer {
     }
 
     .outline {
-      font-size: 0.6em;
+      font-size: 0.7em;
 
       .outline-title {
         display: block;
@@ -549,12 +566,15 @@ footer {
   .min-yu {
     content: url('../img/team/min_yu.jpg');
   }
+
   .chris-crowley {
     content: url('../img/team/christopher_crowley.jpg');
   }
+
   .meghan-courtney {
     content: url('../img/team/meghan_courtney.jpg');
   }
+
   .dan-golodner {
     content: url('../img/team/dan_golodner.jpg');
   }
@@ -654,7 +674,6 @@ footer {
   }
   margin-bottom: 7em;
 }
-
 
 // MEDIA VIEW
 .media {

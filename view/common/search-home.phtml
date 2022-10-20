@@ -8,15 +8,16 @@
             $search = $this->plugin('facetSelect');
             $categorySearch = $this->ListCategory();
             $translate = $this->plugin('translate');
+            $itemSetId = $this->themeSetting('search_block');
             // Subject
-            $res = $categorySearch->getValueValues("items", 3, "eq", array("item_set_id" => array(7285), "site_id" => 21));
+            $res = $categorySearch->getValueValues("items", 3, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
             foreach ($res as $value) {
                 $subject[]["value"] = $value["label"];
             }
             echo $search("dcterms_subject_ss", $subject, array("placeholder" => 'Subject')); // look at search/facet-select.phtml
 
             // Audience Education Level
-            $res = $categorySearch->getValueValues("items", 46, "eq", array("item_set_id" => array(7285), "site_id" => 21));
+            $res = $categorySearch->getValueValues("items", 46, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
 
             foreach ($res as $value) {
                 $edu_level[]["value"] = $value["label"];
