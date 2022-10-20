@@ -2,30 +2,34 @@
     <div class="search-archives-container">
         <div style="width: 100%; color: #777; font-weight: 500; font-size: 2em">Search Archives</div>
         <span style="font-size: 0.8em; color: #777;">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt</span>
-        <div class="select-dropdowns">
+        <form action="/omeka-s/s/archives/lesson-plans/search" class="search-form" class="input-group">
+            <div class="select-dropdowns">
 
-            <?php
-            $search = $this->plugin('facetSelect');
-            $categorySearch = $this->ListCategory();
-            $translate = $this->plugin('translate');
-            $itemSetId = $this->themeSetting('search_block');
-            // Subject
-            $res = $categorySearch->getValueValues("items", 3, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
-            foreach ($res as $value) {
-                $subject[]["value"] = $value["label"];
-            }
-            echo $search("dcterms_subject_ss", $subject, array("placeholder" => 'Subject')); // look at search/facet-select.phtml
+                <?php
+                $search = $this->plugin('facetSelect');
+                $categorySearch = $this->ListCategory();
+                $translate = $this->plugin('translate');
+                $itemSetId = $this->themeSetting('search_block');
+                // Subject
+                $res = $categorySearch->getValueValues("items", 3, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
+                foreach ($res as $value) {
+                    $subject[]["value"] = $value["label"];
+                }
+                echo $search("dcterms_subject_ss", $subject, array("placeholder" => 'Subject')); // look at search/facet-select.phtml
 
-            // Audience Education Level
-            $res = $categorySearch->getValueValues("items", 46, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
+                // Audience Education Level
+                $res = $categorySearch->getValueValues("items", 46, "eq", array("item_set_id" => array($itemSetId), "site_id" => $site->id()));
 
-            foreach ($res as $value) {
-                $edu_level[]["value"] = $value["label"];
-            }
-            echo $search("dcterms_educationLevel", $edu_level, array("placeholder" => 'Education Level')); // look at search/facet-select.phtml
+                foreach ($res as $value) {
+                    $edu_level[]["value"] = $value["label"];
+                }
+                echo $search("dcterms_educationLevel_ss", $edu_level, array("placeholder" => 'Education Level')); // look at search/facet-select.phtml
 
-            ?>
-        </div>
+                ?>
+                <button type="submit" class="button"><span class="o-icon-search"></span>Search</button>
+            </div>
+            
+        </form>
         <!-- <form action="/" class="search-form" class="input-group">
 <input type="text" name="fulltext_search" 
     placeholder="<?php echo $translate('Search site...'); ?>"

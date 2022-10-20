@@ -272,6 +272,19 @@ i .fa {
    display: flex;
    clear: both;
    margin-top: 1em;
+   button[type="submit"] {
+    border-radius: 1em;
+    padding: 0.55em 1em;
+    margin: 0px 1em;
+    font-size: 14px;
+    align-items: center;
+    border: 1px solid #333;
+    color: #ffcc00;
+    background-color: #0f594e;
+    .o-icon-search {
+      margin-right:0.5em;
+    }
+   }
 }
 
 .page.home {
