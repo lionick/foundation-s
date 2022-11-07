@@ -253,6 +253,7 @@ i .fa {
 
 }
 
+
 .reach-out {
   .contact-info-container .info-item {
     display: flex;
@@ -273,7 +274,7 @@ i .fa {
    clear: both;
    margin-top: 1em;
    button[type="submit"] {
-    border-radius: 1em;
+    border-radius: 3em;
     padding: 0.55em 1em;
     margin: 0px 1em;
     font-size: 14px;
@@ -284,7 +285,7 @@ i .fa {
     .o-icon-search {
       margin-right:0.5em;
     }
-   }
+  }
 }
 
 .page.home {
@@ -725,6 +726,11 @@ footer {
 
   .contact-us-block {
     margin: 1em;
+    .explanation.success {
+      color: white;
+      padding: 1em;
+      background-color: #0c5449;
+    }
   }
 }
 
