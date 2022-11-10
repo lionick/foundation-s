@@ -13,7 +13,7 @@
     
     // Add loading animation when a form is submitted, when any item with a "spin" class is clicked,
     // or on any button or anchor tag lacking the .nospin class.
-    $("input[type='submit'], button:not(.nospin), .spin").on('click', function() {
+    $("input[type='submit'], button:not(.nospin,.menu-toggle), .spin").on('click', function() {
 
       $(".wsu-spinner").show();
 

@@ -10,7 +10,11 @@ $labelInfo = $this->setting('property_label_information');
         <?php if ($propertyData['alternate_label']): ?>
         <?php echo $escape($translate($propertyData['alternate_label'])); ?>
         <?php else: ?>
-        <?php echo $escape($translate($propertyData['property']->label())); ?>
+            <?php if($propertyData['property']->label() == "Relation"): ?>
+                <?php echo "Related to"?>
+            <?php else: ?>
+                <?php echo $escape($translate($propertyData['property']->label())); ?>
+            <?php endif; ?>
         <?php endif; ?>
         <?php if ('term' === $labelInfo): ?>
         <span class="field-term">(<?php echo $escape($propertyData['property']->term()); ?>)</span>

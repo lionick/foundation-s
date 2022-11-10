@@ -141,6 +141,14 @@ p {
 i .fa {
   margin-right: 0.5em;
 }
+#offCanvas .input-group-button button[type="submit"] {
+  background: url(../img/search_icon.png) no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-left: -39px;
+  border: 0px;
+  margin-top: 7px;
+}
 
 .top-bar {
   form {
@@ -302,7 +310,7 @@ i .fa {
   .search-archives-container {
     margin: auto;
     display: block;
-    min-width: 30em;
+    /*min-width: 30em;*/
     width: fit-content;
   }
 
@@ -766,4 +774,19 @@ footer {
   .side-by-side-container {
     flex-wrap: unset;
   }
+}
+@media (max-width: 444px) {
+  .select-dropdowns, .select-dropdowns button[type=submit] {
+    display: block;
+    button[type=submit]
+    {
+      display: block;
+      margin:auto;
+    }
+    select {
+      width:100%;
+      margin: 0.5em 0;
+    }
+  }
+
 }
