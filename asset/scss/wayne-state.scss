@@ -643,6 +643,17 @@ footer {
   }
   width: 100%;
 }
+// ITEM SEARCH PAGE FOR TAGS
+.item.resource {
+  .advanced-search {
+    display: none;
+  }
+  .sorting {
+    .button[type=submit] {
+      margin:0px
+    }
+  }
+}
 // ADVANCED SEARCH 
 .search-page #search-page #form-search{
   display: flex;
@@ -677,6 +688,13 @@ footer {
 }
 
 .search-results {
+  .search-filters .filter a::after {
+    content: "[x]";
+    float: right;
+    margin-right: 0px;
+    margin-left: 8px;
+    color: red;
+  }
   .omeka-pagination {
     .page-input-top {
       text-align: center;
