@@ -676,7 +676,6 @@ footer {
   > .field:first-child {
     width: 95%;
   }
-
 }
 #advanced-search-form {
   .inputs button[type="submit"] {
@@ -693,6 +692,7 @@ footer {
     margin-right: 0px!important;
     margin-left: 8px;
     color: red;
+    cursor: pointer;
   }
   .omeka-pagination {
     .page-input-top {
