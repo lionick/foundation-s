@@ -5,7 +5,7 @@ $labelInfo = $this->setting('property_label_information');
 ?>
 <dl>
 <?php foreach ($values as $term => $propertyData): ?>
-    <div class="property">
+    <div class="property <?php echo !empty(explode(":", $term)) ? explode(":", $term)[1] : "" ?>">
         <dt>
         <?php if ($propertyData['alternate_label']): ?>
         <?php echo $escape($translate($propertyData['alternate_label'])); ?>
