@@ -517,12 +517,12 @@ footer {
         color: map-get($wayne-palette, gray-003);
         font-weight: 500;
         text-transform: capitalize;
-        margin-top: 1rem;
+        margin: 1rem 0;
       }
 
       .brand {
         color: map-get($wayne-palette, brown-001);
-        font-size: 0.7em;
+        font-size: 1em;
         font-weight: 900;
         text-transform: capitalize;
         display: flex;
@@ -625,6 +625,7 @@ footer {
     padding-top:0;
   }
 }
+
 .search-results {
   .resource-list {
    margin: 0;
