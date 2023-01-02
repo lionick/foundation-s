@@ -4,7 +4,14 @@
             <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
         </div>
         <?php if ($this->themeSetting('logo')): ?>
-        <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
+        <div class="site-title">
+            <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo" usemap="#imgmapheader">
+            <map name="imgmapheader">
+                <area target="_blank" alt="WSU" title="WSU" href="https://education.wayne.edu/" coords="0,0,147,104" shape="rect">
+                <area target="_blank" alt="Walter Reuther" title="Walter Reuther" href="https://reuther.wayne.edu/" coords="148,0,272,104" shape="rect">
+                <area target="_blank" alt="NHPRC" title="NHPRC" href="https://www.archives.gov/nhprc" coords="272,0,365,104" shape="rect">
+            </map>
+        </div>
         <?php else: ?>
         <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
         <?php endif; ?>
