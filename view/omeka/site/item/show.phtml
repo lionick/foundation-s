@@ -131,6 +131,9 @@ if ($galleryDisplay) {
                 </div>
             </dl>
         <?php endif; ?>
+        <!-- Via a standard partial. -->
+        <?php echo $this->partial('common/comment', ['resource' => $resource]); ?>
+
         <?php //$this->trigger('view.show.after'); ?>
     </div>
 </div>
