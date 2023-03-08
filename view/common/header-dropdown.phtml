@@ -5,21 +5,23 @@
         </div>
         <?php if ($this->themeSetting('logo')): ?>
         <div class="site-title">
-            <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo" usemap="#imgmapheader">
-            <map name="imgmapheader">
-                <area target="_blank" alt="WSU" title="WSU" href="https://education.wayne.edu/" coords="0,0,147,104" shape="rect">
-                <area target="_blank" alt="Walter Reuther" title="Walter Reuther" href="https://reuther.wayne.edu/" coords="148,0,272,104" shape="rect">
-                <area target="_blank" alt="NHPRC" title="NHPRC" href="https://www.archives.gov/nhprc" coords="272,0,365,104" shape="rect">
-            </map>
+            <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
         </div>
         <?php else: ?>
         <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
         <?php endif; ?>
     </nav>
     <div class="top-bar-right" id="responsive-menu">
+        
         <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
-        <div class="search">
-            <?php echo $this->partial('common/search-form'); ?>
+        <div id="social_media">
+            <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg');?>"/>
+            <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg');?>"/>
+            <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg');?>"/>
+            <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg');?>"/>
         </div>
+        <!-- <div class="search">
+            <?php // echo $this->partial('common/search-form'); ?>
+        </div> -->
     </div>
 </div>

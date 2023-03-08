@@ -18,15 +18,6 @@ if ($activePage):
     <?php endif; ?>
 <?php endif; ?>
 
-<?php if ($activePage): ?>
-    <?php if ($this->displayNavigation && $activePage['page']->hasPages()): ?>
-    <nav class="sub-menu wide" data-sticky-container>
-        <div class="sticky" data-sticky data-anchor="blocks">
-            <?php echo $nav->menu()->setUlClass('vertical menu')->renderSubMenu(); ?>
-        </div>
-    </nav>
-    <?php endif; ?>
-<?php endif; ?>
 
 <?php $this->trigger('view.show.before'); ?>
 <?php 
