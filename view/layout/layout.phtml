@@ -99,9 +99,13 @@ endif;
                     //var_dump($activePage['page']->getParent());
                     $activePage['page'] = $activePage['page']->getParent();
                 }
-                
+                $active="";
+                if ($activePage['depth'] == 0) {
+                    $active = "active";
+                }
                 ?>
-                <div class="main-menu-title"><?php echo  !empty($activePage['page']) ? '<a href="'.$activePage['page']->getHref().'"/>'.$activePage['page']->getLabel().'</a>' : ""; ?> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> </div>
+                <div class="main-menu-title"><?php echo  !empty($activePage['page']) ? '
+                    <a href="'.$activePage['page']->getHref().'" class="'.$active.'"/>'.$activePage['page']->getLabel().'</a>' : ""; ?> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> </div>
                 <?php if ($activePage) : ?>
                     <?php if ($activePage['page']->hasPages()) : ?>
                         <nav class="sub-menu wide">
