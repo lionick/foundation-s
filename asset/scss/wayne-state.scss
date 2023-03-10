@@ -132,6 +132,9 @@ textarea {
       padding: 0 0.8em;
       color: #fff;
       font-size: 1em;
+      a:hover {
+        color: #fada7c;
+      }
     }
 
     .wide.sub-menu {
@@ -144,8 +147,13 @@ textarea {
         position: relative;
         list-style: none;
         font-size: 0.9em;
+
         li.active a {
           color: #ffcd34;
+        }
+
+        li a:hover {
+          color: #fada7c;
         }
 
         li::before {
@@ -569,71 +577,13 @@ i .fa {
     .wsu-badge a {
       color: #fff;
     }
-
-    &.history {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, green-002);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/history.jpg');
-      }
-    }
-
-    &.economics {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, yellow-001);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/polisci.jpg');
-      }
-    }
-
-    &.geography {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, blue-001);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/world_geography.jpg');
-      }
-    }
-
-    &.political {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, purple-001);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/political_science.jpg');
-      }
-    }
-
-    &.health {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, orange-001);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/health.jpg');
-      }
-    }
-
-    &.natural {
-      .wsu-badge {
-        background-color: map-get($wayne-palette, grey-005);
-      }
-
-      .thumbnail-item-image {
-        background-image: url('../img/thumbnails/natural_sciences.jpg');
-      }
-    }
   }
 }
 
-.bridge-the-gap {
-  content: url('../img/main/school_teacher.png')
+.browse-all {
+  padding: 0.5em 1em;
+  background-color: #ddd;
+  font-weight: 600;
 }
 
 .lesson-plan-title-extra,
@@ -839,6 +789,7 @@ footer {
   h3 {
     padding-top: 0;
   }
+
   .search-facet-items {
     margin-left: 0px;
   }
@@ -909,17 +860,18 @@ footer {
 }
 
 #advanced-search-form {
-  .inputs button[type="submit"] {
+  .inputs button[type=submit] {
     float: none;
-    padding: 0.55em;
-    width: 100%;
+    padding: 1em 2em;
   }
 }
 
 #search-filters .filter {
-  margin-left: 0!important;
-  select:nth-of-type(1), select:nth-of-type(2) {
-    min-width: auto!important;
+  margin-left: 0 !important;
+
+  select:nth-of-type(1),
+  select:nth-of-type(2) {
+    min-width: auto !important;
   }
 }
 

@@ -24,7 +24,7 @@
       }
 
     });
-    
+    $("#advanced-search-form").find("input[type='search']").attr("placeholder", "Type something to search...")
     $("#contact-us").attr("action", "#contact");
   });
 })(jQuery)
