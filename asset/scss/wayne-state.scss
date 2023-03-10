@@ -36,7 +36,6 @@ header {
   padding-right: (2 * $global-padding);
   padding-left: (2 * $global-padding);
   background-color: #000;
-  // @include xy-grid-container;
 
   @include breakpoint(small down) {
     padding: 0;
@@ -839,6 +838,9 @@ footer {
 
   h3 {
     padding-top: 0;
+  }
+  .search-facet-items {
+    margin-left: 0px;
   }
 }
 
