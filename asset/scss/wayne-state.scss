@@ -868,7 +868,7 @@ footer {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
 
   .field {
@@ -886,11 +886,13 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-
   }
 
   >.field:first-child {
     width: 95%;
+    .inputs input {
+      padding: 25px;
+    }
   }
 }
 
