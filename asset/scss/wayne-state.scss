@@ -793,10 +793,41 @@ footer {
   h3 {
     padding-top: 0;
   }
-
-  .search-facet-items {
+  .search-facets-list {
+    padding-right: 10%;
     margin-left: 0px;
   }
+  .search-facet-items {
+    margin-left: 10px;
+  }
+  .collapsed {
+    display: none;
+  }
+  .search-facet h4 {
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 20px;
+  }
+  .search-facet h4:after{
+    content:"";
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    float: right;
+    position: relative;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .search-facet h4.closed:after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  
 }
 
 .search-results {

@@ -24,7 +24,18 @@
       }
 
     });
+    // Add placeholder to Search Input
     $("#advanced-search-form").find("input[type='search']").attr("placeholder", "Type something to search...")
+    // Make Facets collapsible
+    $(".search-facets-list .search-facet-items").each(function(){
+      $(this).parent().find("h4").toggleClass("closed")
+      $(this).toggleClass("collapsed")
+
+    })
+    $(".search-facets-list h4").on("click", function(){
+      $(this).parent().find(".search-facet-items").toggleClass("collapsed")
+      $(this).toggleClass("closed")
+    })
     $("#contact-us").attr("action", "#contact");
   });
 })(jQuery)
