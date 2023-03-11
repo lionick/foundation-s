@@ -131,11 +131,12 @@ textarea {
     a.active {
       color: #ffcd34;
     }
-    
+
     .main-menu-title {
       padding: 0 0.8em;
       color: #fff;
       font-size: 1em;
+
       a:hover {
         color: #fada7c;
       }
@@ -793,23 +794,28 @@ footer {
   h3 {
     padding-top: 0;
   }
+
   .search-facets-list {
     padding-right: 10%;
     margin-left: 0px;
   }
+
   .search-facet-items {
     margin-left: 10px;
   }
+
   .collapsed {
     display: none;
   }
+
   .search-facet h4 {
     cursor: pointer;
     background-color: aliceblue;
     padding: 20px;
   }
-  .search-facet h4:after{
-    content:"";
+
+  .search-facet h4:after {
+    content: "";
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     float: right;
@@ -822,17 +828,23 @@ footer {
     margin-right: 10px;
     transition: transform 0.2s ease-in-out;
   }
+
   .search-facet h4.closed:after {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
-  
-  
+
+
 }
 
 .search-results {
   .resource-list {
     margin: 0;
+
+    .resource-link img {
+      height: 200px !important;
+      width: 190px !important;
+    }
   }
 
   .resource-list.grid {
@@ -890,6 +902,7 @@ footer {
 
   >.field:first-child {
     width: 95%;
+
     .inputs input {
       padding: 25px;
     }
@@ -900,6 +913,8 @@ footer {
   .inputs button[type=submit] {
     float: none;
     padding: 1em 2em;
+    background: #005f4d;
+    color: #fff;
   }
 }
 
