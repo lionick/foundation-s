@@ -100,7 +100,8 @@ endif;
                     $activePage['page'] = $activePage['page']->getParent();
                 }
                 $active="";
-                if (!empty($activePage['depth']) && $activePage['depth'] == 0) {
+                
+                if (isset($activePage['depth']) && $activePage['depth'] == 0) {
                     $active = "active";
                 }
                 ?>
