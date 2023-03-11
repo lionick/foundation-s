@@ -5,8 +5,6 @@
 @import 'globals-wayne-state';
 @import 'spinner';
 
-
-
 $topbar-background: transparent;
 $topbar-input-width: 23rem;
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
@@ -26,10 +24,20 @@ body {
   text-transform: capitalize;
 }
 
-
 a {
   color: map-get($wayne-palette, brown-001);
+
+  &:hover,
+  &:focus {
+    color: #fada7c;
+  }
+
+  :active {
+    color: #ffcd34;
+  }
 }
+
+
 
 header {
   border-bottom: 2px solid #e6e6e6;
