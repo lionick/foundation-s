@@ -803,13 +803,32 @@ footer {
     padding-top: 0;
   }
 
+  ul.search-facets-active {
+    margin-left: 0px;
+    margin-right: 8%;
+  }
+
   .search-facets-list {
     padding-right: 10%;
     margin-left: 0px;
   }
 
   .search-facet-items {
-    margin-left: 10px;
+    margin-left: 5px;
+
+    li.inactive {
+      border-bottom: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    li.active {
+      background-color: #6ee199;
+      padding: 5px;
+
+      a {
+        color: #000;
+      }
+    }
   }
 
   .collapsed {
@@ -822,19 +841,23 @@ footer {
     padding: 20px;
   }
 
-  .search-facet h4:after {
-    content: "";
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    float: right;
-    position: relative;
-    top: 10px;
-    width: 10px;
-    height: 10px;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    margin-right: 10px;
-    transition: transform 0.2s ease-in-out;
+  .search-facet {
+    background-color: #f9f9f9;
+
+    h4:after {
+      content: "";
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      float: right;
+      position: relative;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      margin-right: 10px;
+      transition: transform 0.2s ease-in-out;
+    }
   }
 
   .search-facet h4.closed:after {
