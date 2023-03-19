@@ -249,11 +249,15 @@ textarea {
       width: 100%;
       text-transform: uppercase;
       font-size: 1.8em;
-
     }
 
     > div {
       padding: 20px;
+    }
+    .about-container {
+      h3, h4 {
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -287,11 +291,6 @@ textarea {
     font-size: 0.8em;
   }
 }
-
-//[type='text'] {
-//  box-shadow: none;
-//  text-indent: 20px;
-//}
 
 [type='submit'] {
   display: flex;
