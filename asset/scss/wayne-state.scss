@@ -105,7 +105,7 @@ textarea {
   max-width: 106rem;
 }
 
-.search [type] {
+#offCanvas .search [type] {
   border-radius: 20px;
 }
 
@@ -113,7 +113,6 @@ textarea {
   width: 250px;
   background-color: #00594e;
   height: 100%;
-  /* 100% Full-height */
   // width: 0; /* 0 width - change this with JavaScript */
   position: relative;
   /* Stay in place */
@@ -134,14 +133,17 @@ textarea {
     }
 
     .button {
-      background-color: #0b594e;
       margin-left: 5px;
-      background: url(../img/search_icon.png) no-repeat;
-      height: 30px;
-      width: 30px;
       border: 0px;
-      margin-top: 7px;
+      margin-top: 1px;
+      display: inline-block;
+      width: 41px;
+      height: 42px;
+      padding: 7px;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoMTAuNjY2NjcsMTAuNjY2NjcpIj48cGF0aCBkPSJNOSwyYy0zLjg1NDE1LDAgLTcsMy4xNDU4NSAtNyw3YzAsMy44NTQxNSAzLjE0NTg1LDcgNyw3YzEuNzQ4LDAgMy4zNDUwMSwtMC42NTE5OCA0LjU3NDIyLC0xLjcxODc1bDAuNDI1NzgsMC40MjU3OHYxLjI5Mjk3bDYsNmwyLC0ybC02LC02aC0xLjI5Mjk3bC0wLjQyNTc4LC0wLjQyNTc4YzEuMDY2NzcsLTEuMjI5MjEgMS43MTg3NSwtMi44MjYyMiAxLjcxODc1LC00LjU3NDIyYzAsLTMuODU0MTUgLTMuMTQ1ODUsLTcgLTcsLTd6TTksNGMyLjc3MzI3LDAgNSwyLjIyNjczIDUsNWMwLDIuNzczMjcgLTIuMjI2NzMsNSAtNSw1Yy0yLjc3MzI3LDAgLTUsLTIuMjI2NzMgLTUsLTVjMCwtMi43NzMyNyAyLjIyNjczLC01IDUsLTV6Ij48L3BhdGg+PC9nPjwvZz4KPC9zdmc+') 50% 50% no-repeat #0b594e;
+      background-size: 67%;
     }
+    
   }
 
   .sidebar-menu-container {
@@ -236,7 +238,14 @@ textarea {
   height: fit-content;
   margin: 0px !important;
   padding: 0px !important;
-
+  > h1 {
+    background-color: #000;
+    color: #fff;
+    padding: 0px 50px 20px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.8em;
+  }
   div#blocks {
     margin: 0px !important;
     padding: 0px !important;
@@ -252,7 +261,7 @@ textarea {
     }
 
     > div {
-      padding: 50px;
+      padding: 20px 50px;
     }
     .about-container {
       h3, h4 {
@@ -906,7 +915,10 @@ footer {
 
   width: 100%;
 }
-
+//SEARCH PAGE 
+.search .items.results {
+  padding:20px 50px;
+}
 // ITEM SEARCH PAGE FOR TAGS
 .item.resource {
   .advanced-search {
