@@ -916,9 +916,12 @@ footer {
   width: 100%;
 }
 //SEARCH PAGE 
-.search .items.results {
+.search {
+  .items.results, .site_pages.results {
   padding:20px 50px;
+  }
 }
+
 // ITEM SEARCH PAGE FOR TAGS
 .item.resource {
   .advanced-search {
@@ -943,7 +946,7 @@ footer {
     font-size: 1.8em;
   }
   > div {
-    padding: 20px;
+    padding: 20px 50px;
   }
   #form-search {
     display: flex;
