@@ -36,6 +36,10 @@
       $(this).parent().find(".search-facet-items").toggleClass("collapsed")
       $(this).toggleClass("closed")
     })
+    //move facets to sidebar
+    facets = $(".search-facets")
+    $(".sidebar-menu").prepend(facets)
+    console.log("test???")
 
     function getAllParameters() {
       var urlParams = new URLSearchParams(window.location.search);
