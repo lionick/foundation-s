@@ -41,7 +41,7 @@
     $(".sidebar-menu").prepend(facets)
     //move active facets list (if any) above pagination
     active_facets = $(".search-facets-active")
-    $(".search-results").prepend(active_facets)
+    $("#advanced-search-form").append(active_facets)
 
     //Slider functionality 
     $('.image-slider').each(function() {

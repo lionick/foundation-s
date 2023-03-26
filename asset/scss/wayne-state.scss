@@ -960,58 +960,63 @@ ul.search-facets-active {
 
 }
 
-.search-results {
-  .resource-list {
-    margin: 0;
+.search-results-wrapper {
+  border-top: 1px solid #ddd;
 
-    .resource-link img {
-      height: 200px !important;
-      width: 200px !important;
+  .search-results {
+
+    .resource-list {
+      margin: 0;
+
+      .resource-link img {
+        height: 200px !important;
+        width: 200px !important;
+      }
+
+      .resource-metadata {
+        max-width: 200px;
+
+        h4 {
+          a {
+            color: #000;
+            font-size: 0.8em;
+          }
+        }
+
+      }
+
+      .resource-thumbnail {
+        background-color: #eee;
+        padding: 0px !important;
+        width: 240px;
+        height: 250px;
+        align-items: center;
+      }
     }
 
-    .resource-metadata {
-      max-width: 200px;
+    .resource-list.grid {
+      display: flex;
+      flex-wrap: wrap !important;
+      flex-direction: row;
+      justify-content: space-between !important;
+      align-items: stretch !important;
+      align-content: start;
+      padding-top: 30px;
 
-      h4 {
-        a {
-          color: #000;
-          font-size: 0.8em;
-        }
+      .resource {
+        border-bottom: 0;
+        padding-top: 0 !important;
       }
 
     }
 
-    .resource-thumbnail {
-      background-color: #eee;
-      padding: 0px !important;
-      width: 240px;
-      height: 250px;
-      align-items: center;
-    }
-  }
-
-  .resource-list.grid {
-    display: flex;
-    flex-wrap: wrap!important;
-    flex-direction: row;
-    justify-content: space-between!important;
-    align-items: stretch!important;
-    align-content: start;
-    padding-top: 30px;
-    .resource {
-      border-bottom: 0;
-      padding-top: 0 !important;
+    h3 {
+      padding: 1em 0 0em;
+      text-transform: uppercase;
     }
 
+    width: 100%;
   }
-
-
-  h3 {
-    padding: 1em 0 0em;
-    text-transform: uppercase;
-  }
-
-  width: 100%;
 }
 
 // IMAGE SLIDER
@@ -1159,7 +1164,6 @@ ul.search-facets-active {
 
   >div {
     margin: 20px 50px;
-    border-top: 1px solid #ddd;
     padding-top: 40px;
   }
 
