@@ -40,7 +40,7 @@ a {
 
 
 header {
-  padding: 0rem (2 * $global-padding) (2 * $global-padding) (2 * $global-padding);
+  padding: 0rem;
   background-color: #000;
 
   @include breakpoint(small down) {
@@ -49,10 +49,17 @@ header {
   }
 
   .top-bar {
-    padding-bottom: 1px;
-    margin: auto;
+    height:225px;
     max-width: 106rem;
-
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+    padding: 10px 30px;
+    transform: translate(0%, 0%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 97%);
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
     #social_media {
       padding-right: 10px;
 
@@ -849,18 +856,24 @@ footer {
     margin-top: 0;
   }
 }
+ul.search-facets-active {
+  margin-left: 0px;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0px !important;
+  flex: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: flex;
+}
 
 .search-facets {
   flex-basis: 46% !important;
   padding: 0 0 0 0em !important;
 
-  h3 {
-    padding-top: 0;
-  }
-
-  ul.search-facets-active {
-    margin-left: 0px;
-    margin-right: 8%;
+  > h4, > h3 {
+    display: none;
   }
 
   .search-facets-list {
@@ -869,7 +882,7 @@ footer {
   }
 
   .search-facet-items {
-    background: #ccc;
+    background: #f7f7f7;
     margin-left: 0px;
     padding: 15px;
     li a {
@@ -955,6 +968,71 @@ footer {
   }
 
   width: 100%;
+}
+
+// IMAGE SLIDER
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.slider img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.slider li.active {
+  opacity: 1;
+}
+
+.slider li.active + li {
+  left: 100%;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-nav .nav-item {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.slider-nav .nav-item.active {
+  background-color: #ff6347;
 }
 //SEARCH PAGE 
 .search {

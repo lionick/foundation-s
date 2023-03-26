@@ -1,28 +1,48 @@
-<div class="top-bar">
-    <nav class="top-bar-left">
-        <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
-            <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
-        </div>
-        <?php if ($this->themeSetting('logo')) : ?>
-            <div class="site-title">
-                <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
-            </div>
-        <?php else : ?>
-            <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
-        <?php endif; ?>
-    </nav>
-    <div class="top-bar-right" id="responsive-menu">
+<div class="slider-container">
+<div class="slider-container">
+  <ul class="slider">
+    <li> <img src="https://comanage-upstream2.aai-dev.grnet.gr/omeka-s/files/asset/89ca9cb4b3e642980e5877c4d0ef3ea65d45f05c.png" alt="image1"></li>
+    <li><img src="https://comanage-upstream2.aai-dev.grnet.gr/omeka-s/files/asset/1b0047a9904a1d058831a1d7e8aad266382aaebf.png" alt="image2">
+        </li>
+    <li><img src="https://comanage-upstream2.aai-dev.grnet.gr/omeka-s/files/asset/89ca9cb4b3e642980e5877c4d0ef3ea65d45f05c.png" alt="image3">
+        </li>
+    <li><img src="https://comanage-upstream2.aai-dev.grnet.gr/omeka-s/files/asset/1b0047a9904a1d058831a1d7e8aad266382aaebf.png" alt="image4">
+ </li>
+  </ul>
+  <ul class="slider-nav">
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+  </ul>
+</div>
 
-        <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
-        <div id="social_media">
-            <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg'); ?>" />
-            <div class="search">
-                <?php echo $this->partial('common/search-form'); ?>
+    <div class="top-bar">
+        <nav class="top-bar-left">
+            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
+                <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
             </div>
-        </div>
+            <?php if ($this->themeSetting('logo')) : ?>
+                <div class="site-title">
+                    <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
+                </div>
+            <?php else : ?>
+                <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
+            <?php endif; ?>
+        </nav>
+        <div class="top-bar-right" id="responsive-menu">
 
+            <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
+            <div id="social_media">
+                <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg'); ?>" />
+                <div class="search">
+                    <?php echo $this->partial('common/search-form'); ?>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

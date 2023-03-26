@@ -39,16 +39,59 @@
     //move facets to sidebar
     facets = $(".search-facets")
     $(".sidebar-menu").prepend(facets)
-    console.log("test???")
+    //move active facets list (if any) above pagination
+    active_facets = $(".search-facets-active")
+    $(".search-results").prepend(active_facets)
 
+    //Slider functionality 
+    var sliderIndex = 0;
+    var sliderTimer = null;
+  
+    $('.slider li:first').addClass('active');
+    $('.slider-nav .nav-item:first').addClass('active');
+  
+    $('.slider-nav .nav-item').click(function () {
+      clearInterval(sliderTimer);
+      var currentIndex = sliderIndex;
+      sliderIndex = $(this).index();
+      if (currentIndex !== sliderIndex) {
+        showSliderImage(currentIndex, sliderIndex);
+      }
+      sliderTimer = setInterval(showNextSliderImage, 4000);
+    });
+  
+    function showNextSliderImage() {
+      var currentIndex = sliderIndex;
+      sliderIndex++;
+      if (sliderIndex >= $('.slider li').length) {
+        sliderIndex = 0;
+      }
+      showSliderImage(currentIndex, sliderIndex);
+    }
+  
+    function showSliderImage(currentIndex, nextIndex) {
+      var $currentSlide = $('.slider li').eq(currentIndex);
+      var $nextSlide = $('.slider li').eq(nextIndex);
+      $nextSlide.addClass('active');
+      $currentSlide.animate({ left: '-100%' }, 1200, function () {
+        $currentSlide.removeClass('active').css('left', '100%');
+      });
+      $nextSlide.css('left', '100%').animate({ left: '0' }, 1200);
+      $('.slider-nav .nav-item').eq(nextIndex).addClass('active');
+      $('.slider-nav .nav-item').eq(currentIndex).removeClass('active');
+    }
+  
+    sliderTimer = setInterval(showNextSliderImage, 4000);;
+
+    // While searching take into consideration the active facets (if any)
     function getAllParameters() {
       var urlParams = new URLSearchParams(window.location.search);
       var params = {};
-    
-      urlParams.forEach(function(value, key) {
+
+      urlParams.forEach(function (value, key) {
         params[key] = value;
       });
-    
+
       return params;
     }
 
@@ -58,7 +101,7 @@
         if (params.hasOwnProperty(name)) {
           var value = params[name];
           var input = $('#form-search input[name="' + name + '"]');
-    
+
           if (input.length === 0) {
             input = $('<input>').attr({
               type: 'hidden',
