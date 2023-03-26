@@ -44,44 +44,95 @@
     $(".search-results").prepend(active_facets)
 
     //Slider functionality 
-    var sliderIndex = 0;
-    var sliderTimer = null;
-  
-    $('.slider li:first').addClass('active');
-    $('.slider-nav .nav-item:first').addClass('active');
-  
-    $('.slider-nav .nav-item').click(function () {
-      clearInterval(sliderTimer);
-      var currentIndex = sliderIndex;
-      sliderIndex = $(this).index();
-      if (currentIndex !== sliderIndex) {
-        showSliderImage(currentIndex, sliderIndex);
+    $('.image-slider').each(function() {
+      var $this = $(this);
+      var $group = $this.find('.slide_group');
+      var $slides = $this.find('.slide');
+      var bulletArray = [];
+      var currentIndex = 0;
+      var timeout;
+      
+      function move(newIndex) {
+        var animateLeft, slideLeft;
+        
+        advance();
+        
+        if ($group.is(':animated') || currentIndex === newIndex) {
+          return;
+        }
+        
+        bulletArray[currentIndex].removeClass('active');
+        bulletArray[newIndex].addClass('active');
+        
+        if (newIndex > currentIndex) {
+          slideLeft = '100%';
+          animateLeft = '-100%';
+        } else {
+          slideLeft = '-100%';
+          animateLeft = '100%';
+        }
+        
+        $slides.eq(newIndex).css({
+          display: 'block',
+          left: slideLeft
+        });
+        $group.animate({
+          left: animateLeft
+        }, function() {
+          $slides.eq(currentIndex).css({
+            display: 'none'
+          });
+          $slides.eq(newIndex).css({
+            left: 0
+          });
+          $group.css({
+            left: 0
+          });
+          currentIndex = newIndex;
+        });
       }
-      sliderTimer = setInterval(showNextSliderImage, 4000);
-    });
-  
-    function showNextSliderImage() {
-      var currentIndex = sliderIndex;
-      sliderIndex++;
-      if (sliderIndex >= $('.slider li').length) {
-        sliderIndex = 0;
+      
+      function advance() {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+          if (currentIndex < ($slides.length - 1)) {
+            move(currentIndex + 1);
+          } else {
+            move(0);
+          }
+        }, 4000);
       }
-      showSliderImage(currentIndex, sliderIndex);
-    }
-  
-    function showSliderImage(currentIndex, nextIndex) {
-      var $currentSlide = $('.slider li').eq(currentIndex);
-      var $nextSlide = $('.slider li').eq(nextIndex);
-      $nextSlide.addClass('active');
-      $currentSlide.animate({ left: '-100%' }, 1200, function () {
-        $currentSlide.removeClass('active').css('left', '100%');
+      
+      $('.next_btn').on('click', function() {
+        if (currentIndex < ($slides.length - 1)) {
+          move(currentIndex + 1);
+        } else {
+          move(0);
+        }
       });
-      $nextSlide.css('left', '100%').animate({ left: '0' }, 1200);
-      $('.slider-nav .nav-item').eq(nextIndex).addClass('active');
-      $('.slider-nav .nav-item').eq(currentIndex).removeClass('active');
-    }
-  
-    sliderTimer = setInterval(showNextSliderImage, 4000);;
+      
+      $('.previous_btn').on('click', function() {
+        if (currentIndex !== 0) {
+          move(currentIndex - 1);
+        } else {
+          move(3);
+        }
+      });
+      
+      $.each($slides, function(index) {
+        var $button = $('<a class="slide_btn">&bull;</a>');
+        
+        if (index === currentIndex) {
+          $button.addClass('active');
+        }
+        $button.on('click', function() {
+          move(index);
+        }).appendTo('.slide_buttons');
+        bulletArray.push($button);
+      });
+      
+      advance();
+    });
 
     // While searching take into consideration the active facets (if any)
     function getAllParameters() {

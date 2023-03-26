@@ -1,51 +1,47 @@
-<div class="slider-container">
-
-    <ul class="slider">
-        <?php $imagesUrls = $this->themeSetting('image_slider');
-        $imagesArray = explode(",", $imagesUrls);
-        $i=0;
-        foreach ($imagesArray as $image) {
-            $i++;
-        ?>
-            <li> <img src="<?php echo trim($image); ?>" alt="slide-<?php echo $i;?>"></li>
-        <?php
-        }
-        ?>
-    </ul>
-    <ul class="slider-nav">
-        <li class="nav-item"></li>
-        <li class="nav-item"></li>
-        <li class="nav-item"></li>
-        <li class="nav-item"></li>
-    </ul>
-</div>
-
-<div class="top-bar">
-    <nav class="top-bar-left">
-        <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
-            <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
+<div class="image-slider">
+    <div class="slide_viewer">
+        <div class="slide_group">
+            <?php $imagesUrls = $this->themeSetting('image_slider');
+            $imagesArray = explode(",", $imagesUrls);
+            $i = 0;
+            foreach ($imagesArray as $image) {
+                $i++;
+            ?>
+                <img src="<?php echo trim($image); ?>" alt="slide-<?php echo $i; ?>" class="slide">
+            <?php
+            }
+            ?>
         </div>
-        <?php if ($this->themeSetting('logo')) : ?>
-            <div class="site-title">
-                <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
-            </div>
-        <?php else : ?>
-            <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
-        <?php endif; ?>
-    </nav>
-    <div class="top-bar-right" id="responsive-menu">
-
-        <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
-        <div id="social_media">
-            <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" />
-            <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg'); ?>" />
-            <div class="search">
-                <?php echo $this->partial('common/search-form'); ?>
-            </div>
-        </div>
-
+        <div class="slide_buttons"></div>
     </div>
-</div>
-</div>
+
+
+    <div class="top-bar">
+        <nav class="top-bar-left">
+            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
+                <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
+            </div>
+            <?php if ($this->themeSetting('logo')) : ?>
+                <div class="site-title">
+                    <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
+                </div>
+            <?php else : ?>
+                <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
+            <?php endif; ?>
+        </nav>
+        <div class="top-bar-right" id="responsive-menu">
+
+            <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
+            <div id="social_media">
+                <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" />
+                <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg'); ?>" />
+                <div class="search">
+                    <?php echo $this->partial('common/search-form'); ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!-- End // .slider -->
