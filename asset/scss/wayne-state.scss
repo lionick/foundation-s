@@ -966,19 +966,49 @@ ul.search-facets-active {
 
     .resource-link img {
       height: 200px !important;
-      width: 190px !important;
+      width: 200px !important;
+    }
+
+    .resource-metadata {
+      max-width: 200px;
+
+      h4 {
+        a {
+          color: #000;
+          font-size: 0.8em;
+        }
+      }
+
+    }
+
+    .resource-thumbnail {
+      background-color: #eee;
+      padding: 0px !important;
+      width: 240px;
+      height: 250px;
+      align-items: center;
     }
   }
 
   .resource-list.grid {
+    display: flex;
+    flex-wrap: wrap!important;
+    flex-direction: row;
+    justify-content: space-between!important;
+    align-items: stretch!important;
+    align-content: start;
+    padding-top: 30px;
     .resource {
       border-bottom: 0;
       padding-top: 0 !important;
     }
+
   }
+
 
   h3 {
     padding: 1em 0 0em;
+    text-transform: uppercase;
   }
 
   width: 100%;
@@ -986,21 +1016,21 @@ ul.search-facets-active {
 
 // IMAGE SLIDER
 .image-slider {
- width: 100%;
- position: relative;
+  width: 100%;
+  position: relative;
 
   .slide_viewer {
     height: 400px;
     overflow: hidden;
     position: relative;
   }
-  
+
   .slide_group {
     height: 100%;
     position: relative;
     width: 100%;
   }
-  
+
   .slide {
     display: none;
     position: absolute;
@@ -1008,11 +1038,11 @@ ul.search-facets-active {
     object-fit: cover;
     height: 100%;
   }
-  
+
   .slide:first-child {
     display: block;
   }
-  
+
   .slide_buttons {
     left: 0;
     position: absolute;
@@ -1020,7 +1050,7 @@ ul.search-facets-active {
     text-align: center;
     bottom: 0px;
   }
-  
+
   a.slide_btn {
     color: #ddd;
     font-size: 30px;
@@ -1031,12 +1061,13 @@ ul.search-facets-active {
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
   }
-  
-  .slide_btn.active, .slide_btn:hover {
+
+  .slide_btn.active,
+  .slide_btn:hover {
     color: #ffd527;
     cursor: pointer;
   }
-  
+
   .directional_nav {
     height: 340px;
     margin: 0 auto;
@@ -1044,7 +1075,7 @@ ul.search-facets-active {
     position: relative;
     top: -340px;
   }
-  
+
   .previous_btn {
     bottom: 0;
     left: 100px;
@@ -1052,7 +1083,7 @@ ul.search-facets-active {
     position: absolute;
     top: 0;
   }
-  
+
   .next_btn {
     bottom: 0;
     margin: auto;
@@ -1060,8 +1091,9 @@ ul.search-facets-active {
     right: 100px;
     top: 0;
   }
-  
-  .previous_btn, .next_btn {
+
+  .previous_btn,
+  .next_btn {
     cursor: pointer;
     height: 65px;
     opacity: 0.5;
@@ -1072,11 +1104,12 @@ ul.search-facets-active {
     transition: opacity 0.4s ease-in-out;
     width: 65px;
   }
-  
-  .previous_btn:hover, .next_btn:hover {
+
+  .previous_btn:hover,
+  .next_btn:hover {
     opacity: 1;
   }
-  
+
   @media only screen and (max-width: 767px) {
     .previous_btn {
       left: 50px;
@@ -1121,10 +1154,13 @@ ul.search-facets-active {
     width: 100%;
     text-transform: uppercase;
     font-size: 1.8em;
+    display: none;
   }
 
   >div {
-    padding: 20px 50px;
+    margin: 20px 50px;
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
   }
 
   #form-search {
