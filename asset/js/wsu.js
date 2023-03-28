@@ -42,6 +42,9 @@
     //move active facets list (if any) above pagination
     active_facets = $(".search-facets-active")
     $("#advanced-search-form").append(active_facets)
+    // move filter(if any) above pagination
+    filter = $(".search-filters")
+    $("#advanced-search-form").append(filter)
 
     //Slider functionality 
     $('.image-slider').each(function() {
