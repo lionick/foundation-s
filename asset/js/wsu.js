@@ -38,7 +38,7 @@
     })
     //move facets to sidebar
     facets = $(".search-facets")
-    $(".sidebar-menu").prepend(facets)
+    $(".sidebar-menu .sidebar-menu-container").after(facets)
     //move active facets list (if any) above pagination
     active_facets = $(".search-facets-active")
     $("#advanced-search-form").append(active_facets)
