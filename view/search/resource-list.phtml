@@ -41,7 +41,7 @@ if ($bodyTerm) {
 
 $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') . '" title="' . $translate('No media') . '"/>';
 ?>
-<?php echo "tester"; ?>
+
 <?php if ($title): ?>
 <h3><?= $escape($title) ?></h3>
 <?php endif; ?>
@@ -53,9 +53,6 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
         $thumbnail = $media ? $thumbnailHelper($media, 'medium') : $defaultThumbnail;
         $heading = $headingTerm ? $resource->value($headingTerm, $headingOptions) : $resource->displayTitle(null, $headingOptions);
         $body = $bodyTerm ? $resource->value($bodyTerm, $bodyOptions) : $resource->displayDescription(null, $bodyOptions);
-        //var_dump($resource->value("dcterms:date"));
-        // var_dump($bodyTerm);
-        //var_dump($escape($resource->value("dcterms:date")));
     ?>
 
     <li class="resource <?= $resourceType ?>">
