@@ -292,7 +292,7 @@ textarea {
     }
 
     >div {
-      padding: 20px 50px;
+      margin: 20px 50px;
     }
 
     .about-container {
@@ -976,14 +976,17 @@ ul.search-facets-active {
 
       .resource-metadata {
         max-width: 200px;
-        .dc-date{ 
+
+        .dc-date {
           color: #777;
-          padding-bottom:10px;
+          padding-bottom: 10px;
           font-size: 0.9em;
         }
+
         h4 {
           margin: 0px;
           padding: 0px;
+
           a {
             color: #000;
             font-size: 0.8em;
@@ -999,7 +1002,7 @@ ul.search-facets-active {
         }
 
         .resource-link {
-          width: auto;
+          width: inherit;
           height: 100%;
           display: flex;
           flex-direction: row;
@@ -1183,8 +1186,55 @@ ul.search-facets-active {
   }
 }
 
+// SHORTCODE FOR RANDOM ITEMS
+.shortcode {
+  border-bottom: 1px solid #ccc;
+  .resource-list.grid {
+    display: grid;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 180px);
+    grid-gap: 3rem;
+    padding-top: 0px;
+    border-top: 0px;
+    margin-top: 0px;
+
+    .resource {
+      border-bottom: 0px;
+    }
+
+    .resource-link img {
+      height: 200px !important;
+      width: 200px !important;
+    }
+
+    .resource-metadata {
+      max-width: 200px;
+
+      .dc-date {
+        color: #777;
+        padding-top: 10px;
+        font-size: 0.9em;
+      }
+
+      h4 {
+        margin: 0px;
+        padding: 0px;
+
+        a {
+          color: #000;
+          font-size: 0.8em;
+        }
+      }
+
+    }
+  }
+}
+
 // ADVANCED SEARCH 
 .search-page {
+
   .sidebar-last-items {
     display: none;
   }
@@ -1263,6 +1313,18 @@ ul.search-facets-active {
 }
 
 .search-results {
+  .search-results-header {
+    align-items: center;
+  }
+
+  .search-sort {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    padding-right: 20px;
+    justify-content: flex-end;
+  }
+
   .search-filters .filter a::after {
     content: "[x]" !important;
     float: right;
