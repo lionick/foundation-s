@@ -17,11 +17,11 @@
     // Year Slider
     var currentYear = new Date().getFullYear();
     $(".browse ul.search-facets-list").prepend('<li class="search-facet">' +
-    '<h4 class="closed">DATE RANGE</h4>' + 
-      '<ul class="search-facet-items collapsed">' + 
-      '<li class="date-range-list"><div class="date-range-text"><span id="selected-year-from"></span>'+
-      '<span>&nbsp;-&nbsp;</span><span id="selected-year-to"></span></div>' + 
-      '<div id="year-slider"></div></li>' + 
+      '<h4 class="closed">DATE RANGE</h4>' +
+      '<ul class="search-facet-items collapsed">' +
+      '<li class="date-range-list"><div class="date-range-text"><span id="selected-year-from"></span>' +
+      '<span>&nbsp;-&nbsp;</span><span id="selected-year-to"></span></div>' +
+      '<div id="year-slider"></div></li>' +
       '</ul></li>'
     )
     $("#year-slider").slider({
@@ -37,11 +37,28 @@
     $("#selected-year-from").html($("#year-slider").slider("values", 0));
     $("#selected-year-to").html($("#year-slider").slider("values", 1));
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var fromYear = urlParams.get("from");
+    var toYear = urlParams.get("to");
+    // Check if "from" and "to" values are present in the URL
+    if (fromYear !== null && toYear !== null) {
+      // Convert the parameter values to integers
+      fromYear = parseInt(fromYear);
+      toYear = parseInt(toYear);
+
+      // Set the year slider values based on the parameter values
+      $("#year-slider").slider("option", "values", [fromYear, toYear]);
+
+      // Update the selected year display based on the slider values
+      $("#selected-year-from").html(fromYear);
+      $("#selected-year-to").html(toYear);
+    }
+
     $("#year-slider").on('mouseup', function () {
       from = $("#selected-year-from").html()
       to = $("#selected-year-to").html()
       //q =& dcterms_date_s % 5Bfrom % 5D = 1972 & dcterms_date_s % 5Bto % 5D = 2000 & submit=
-      
+
       // Define the parameters as an object
       var params = {
         "dcterms_date_s[from]": from,
@@ -60,7 +77,7 @@
 
       // Navigate to the new URL
       window.location.href = newUrl;
-      
+
     })
 
     $("input[type='submit'], button:not(.nospin,.menu-toggle), .spin").on('click', function () {
@@ -217,7 +234,7 @@
     }
     setFormValues();
 
-    
+
     $("#contact-us").attr("action", "#contact");
   });
 })(jQuery)
