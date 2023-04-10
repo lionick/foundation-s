@@ -13,9 +13,12 @@ if (isset($stylesheet)) {
 }
 $this->headLink()->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
+$this->headLink()->prependStylesheet('https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css');
 $this->headScript()->prependFile($this->assetUrl('vendor/foundation/foundation.min.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
+$this->headScript()->prependFile('https://code.jquery.com/ui/1.13.0/jquery-ui.min.js');
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+
 $this->headScript()->appendFile($this->assetUrl('js/wsu.js'));
 
 $this->jsTranslate();

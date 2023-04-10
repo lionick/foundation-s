@@ -13,10 +13,59 @@
 
     // Add loading animation when a form is submitted, when any item with a "spin" class is clicked,
     // or on any button or anchor tag lacking the .nospin class.
+
+    // Year Slider
+    var currentYear = new Date().getFullYear();
+    $(".browse ul.search-facets-list").prepend('<li class="search-facet">' +
+    '<h4 class="closed">DATE RANGE</h4>' + 
+      '<ul class="search-facet-items collapsed">' + 
+      '<li class="date-range-list"><div class="date-range-text"><span id="selected-year-from"></span>'+
+      '<span>&nbsp;-&nbsp;</span><span id="selected-year-to"></span></div>' + 
+      '<div id="year-slider"></div></li>' + 
+      '</ul></li>'
+    )
+    $("#year-slider").slider({
+      range: true,
+      values: [1900, currentYear],
+      min: 1900,
+      max: currentYear,
+      slide: function (event, ui) {
+        $("#selected-year-from").html(ui.values[0]);
+        $("#selected-year-to").html(ui.values[1]);
+      }
+    });
+    $("#selected-year-from").html($("#year-slider").slider("values", 0));
+    $("#selected-year-to").html($("#year-slider").slider("values", 1));
+
+    $("#year-slider").on('mouseup', function () {
+      from = $("#selected-year-from").html()
+      to = $("#selected-year-to").html()
+      //q =& dcterms_date_s % 5Bfrom % 5D = 1972 & dcterms_date_s % 5Bto % 5D = 2000 & submit=
+      
+      // Define the parameters as an object
+      var params = {
+        "dcterms_date_s[from]": from,
+        "dcterms_date_s[to]": to,
+      };
+
+      // Get the current URL
+      var currentUrl = window.location.href;
+
+      // Check if the URL already contains parameters
+      var separator = currentUrl.indexOf("?") !== -1 ? "&" : "?";
+
+      // Append the query string to the URL
+      var queryString = $.param(params);
+      var newUrl = currentUrl + separator + queryString;
+
+      // Navigate to the new URL
+      window.location.href = newUrl;
+      
+    })
+
     $("input[type='submit'], button:not(.nospin,.menu-toggle), .spin").on('click', function () {
 
       $(".wsu-spinner").show();
-
 
       // Test for invalid fields (HTML5) and turn off spinner explicitly if found
       if (document.querySelectorAll(":invalid").length) {
@@ -46,27 +95,27 @@
     filter = $(".search-filters")
     $("#advanced-search-form").append(filter)
 
-    //Slider functionality 
-    $('.image-slider').each(function() {
+    //Image Slider functionality 
+    $('.image-slider').each(function () {
       var $this = $(this);
       var $group = $this.find('.slide_group');
       var $slides = $this.find('.slide');
       var bulletArray = [];
       var currentIndex = 0;
       var timeout;
-      
+
       function move(newIndex) {
         var animateLeft, slideLeft;
-        
+
         advance();
-        
+
         if ($group.is(':animated') || currentIndex === newIndex) {
           return;
         }
-        
+
         bulletArray[currentIndex].removeClass('active');
         bulletArray[newIndex].addClass('active');
-        
+
         if (newIndex > currentIndex) {
           slideLeft = '100%';
           animateLeft = '-100%';
@@ -74,14 +123,14 @@
           slideLeft = '-100%';
           animateLeft = '100%';
         }
-        
+
         $slides.eq(newIndex).css({
           display: 'block',
           left: slideLeft
         });
         $group.animate({
           left: animateLeft
-        }, function() {
+        }, function () {
           $slides.eq(currentIndex).css({
             display: 'none'
           });
@@ -94,10 +143,10 @@
           currentIndex = newIndex;
         });
       }
-      
+
       function advance() {
         clearTimeout(timeout);
-        timeout = setTimeout(function() {
+        timeout = setTimeout(function () {
           if (currentIndex < ($slides.length - 1)) {
             move(currentIndex + 1);
           } else {
@@ -105,35 +154,35 @@
           }
         }, 4000);
       }
-      
-      $('.next_btn').on('click', function() {
+
+      $('.next_btn').on('click', function () {
         if (currentIndex < ($slides.length - 1)) {
           move(currentIndex + 1);
         } else {
           move(0);
         }
       });
-      
-      $('.previous_btn').on('click', function() {
+
+      $('.previous_btn').on('click', function () {
         if (currentIndex !== 0) {
           move(currentIndex - 1);
         } else {
           move(3);
         }
       });
-      
-      $.each($slides, function(index) {
+
+      $.each($slides, function (index) {
         var $button = $('<a class="slide_btn">&bull;</a>');
-        
+
         if (index === currentIndex) {
           $button.addClass('active');
         }
-        $button.on('click', function() {
+        $button.on('click', function () {
           move(index);
         }).appendTo('.slide_buttons');
         bulletArray.push($button);
       });
-      
+
       advance();
     });
 
@@ -168,6 +217,7 @@
     }
     setFormValues();
 
+    
     $("#contact-us").attr("action", "#contact");
   });
 })(jQuery)
