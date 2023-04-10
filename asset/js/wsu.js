@@ -38,8 +38,8 @@
     $("#selected-year-to").html($("#year-slider").slider("values", 1));
 
     var urlParams = new URLSearchParams(window.location.search);
-    var fromYear = urlParams.get("from");
-    var toYear = urlParams.get("to");
+    var fromYear = urlParams.get("dcterms_date_s[from]");
+    var toYear = urlParams.get("dcterms_date_s[to]");
     // Check if "from" and "to" values are present in the URL
     if (fromYear !== null && toYear !== null) {
       // Convert the parameter values to integers
