@@ -65,15 +65,15 @@
         "dcterms_date_s[to]": to,
       };
 
-      // Get the current URL
-      var currentUrl = window.location.href;
+      // Parse the URL to extract the existing parameters
+      var urlParams = new URLSearchParams(window.location.search);
 
-      // Check if the URL already contains parameters
-      var separator = currentUrl.indexOf("?") !== -1 ? "&" : "?";
+      // Update the "from" and "to" parameter values
+      urlParams.set("dcterms_date_s[from]", from);
+      urlParams.set("dcterms_date_s[to]", to);
 
-      // Append the query string to the URL
-      var queryString = $.param(params);
-      var newUrl = currentUrl + separator + queryString;
+      // Update the URL with the new parameter values
+      var newUrl = window.location.pathname + "?" + urlParams.toString();
 
       // Navigate to the new URL
       window.location.href = newUrl;
