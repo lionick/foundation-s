@@ -15,9 +15,23 @@
     // or on any button or anchor tag lacking the .nospin class.
 
     // Year Slider
+    // TODO check if this page is BROWSE
     var currentYear = new Date().getFullYear();
+    // Add filter icon for small screens 
+    $(".browse").prepend('<div class="facets-icon"><span class="o-icon- fa fa-sliders fa-sliders-h" title="Open Facets" aria-label="Configure facets and sort fields"></span></div>')
+    $(".facets-icon").on('click', function (){
+      $(this).toggle();
+      $(".sidebar-menu").toggleClass('facet-full-screen')
+      $("body").css("overflow","hidden")
+    })
+    $(".browse .closebtn").on('click', function () {
+      $(".sidebar-menu").toggleClass('facet-full-screen')
+      $("body").css("overflow","auto")
+      $(".facets-icon").toggle()
+    })
+    // Add Filter addhoc
     $(".browse ul.search-facets-list").prepend('<li class="search-facet">' +
-      '<h4 class="closed">DATE RANGE</h4>' +
+      '<h4 class="closed">YEAR RANGE</h4>' +
       '<ul class="search-facet-items collapsed">' +
       '<li class="date-range-list"><div class="date-range-text"><span id="selected-year-from"></span>' +
       '<span>&nbsp;-&nbsp;</span><span id="selected-year-to"></span></div>' +
