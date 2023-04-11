@@ -31,8 +31,8 @@
     })
     // Add Filter addhoc
     $(".browse ul.search-facets-list").prepend('<li class="search-facet">' +
-      '<h4 class="closed">YEAR RANGE</h4>' +
-      '<ul class="search-facet-items collapsed">' +
+      '<h4>YEAR RANGE</h4>' +
+      '<ul class="search-facet-items">' +
       '<li class="date-range-list"><div class="date-range-text"><span id="selected-year-from"></span>' +
       '<span>&nbsp;-&nbsp;</span><span id="selected-year-to"></span></div>' +
       '<div id="year-slider"></div></li>' +

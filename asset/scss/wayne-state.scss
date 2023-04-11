@@ -1010,6 +1010,7 @@ ul.search-facets-active {
         h4 {
           margin: 0px;
           padding: 0px;
+          text-transform: none;
 
           a {
             color: #000;
@@ -1044,7 +1045,6 @@ ul.search-facets-active {
           }
         }
       }
-
 
       .resource-thumbnail {
         background-color: #eee;
