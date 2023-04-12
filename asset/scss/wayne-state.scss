@@ -1191,7 +1191,6 @@ ul.search-facets-active {
 
 //SEARCH PAGE 
 .search {
-
   .items.results,
   .site_pages.results {
     padding: 20px 50px;
@@ -1247,7 +1246,7 @@ ul.search-facets-active {
       h4 {
         margin: 0px;
         padding: 0px;
-        text-transform: none;
+        text-transform: none!important;
         a {
           color: #000;
           font-size: 0.8em;
@@ -1363,7 +1362,13 @@ ul.search-facets-active {
     .page-input-top {
       text-align: center;
     }
-
+    .button {
+      background-color: #00604e;
+      color:#fff;
+    }
+    .button:hover {
+      background-color: #008f74;
+    }
     margin-left: 0;
     width: auto;
   }
