@@ -133,10 +133,6 @@ endif;
                 <?php
                 $categorySearch = $this->ListLastItems();
                 $params = $categorySearch->getLastItemsInserted();
-                //var_dump($params['resources'][0]->getJsonLd()["o:created"]);
-                //var_dump($params['resources'][0]->value("dcterms:date")->value());
-                // echo ($params['resources'][0]->title());
-                // echo($params['resources'][0]->value("dcterms:description"));
                 $timeline_objects = [];
                 foreach ($params['resources'] as $resource_item) {
                     if ($resource_item->value("dcterms:date") != null) {

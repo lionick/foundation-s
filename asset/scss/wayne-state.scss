@@ -887,6 +887,7 @@ footer {
   width: 100%!important;
   position: fixed;
   top: 0px;
+  background: rgb(204, 204, 204);
   .search-facets-list {
     margin:0px;
   }
@@ -982,7 +983,6 @@ ul.search-facets-active {
     -webkit-transform: rotate(-45deg);
   }
 
-
 }
 
 .search-results-wrapper {
@@ -1003,7 +1003,7 @@ ul.search-facets-active {
 
         .dc-date {
           color: #777;
-          padding-bottom: 10px;
+          padding-top: 10px;
           font-size: 0.9em;
         }
 
@@ -1042,6 +1042,7 @@ ul.search-facets-active {
 
           h4 {
             padding-top: 0px;
+            text-transform: none;
           }
         }
       }

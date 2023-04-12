@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \Laminas\View\Renderer\PhpRenderer $this
  * @var \Omeka\Api\Representation\SiteRepresentation $site
@@ -42,12 +43,12 @@ if ($bodyTerm) {
 $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') . '" title="' . $translate('No media') . '"/>';
 ?>
 
-<?php if ($title): ?>
-<h3><?= $escape($title) ?></h3>
+<?php if ($title) : ?>
+    <h3><?= $escape($title) ?></h3>
 <?php endif; ?>
 <ul class="resource-list search-results-list">
     <?php /** @var \Omeka\Api\Representation\AbstractResourceEntityRepresentation $resource */
-    foreach ($resources as $resource):
+    foreach ($resources as $resource) :
         $resourceType = $resource->resourceName();
         $media = $resource->primaryMedia();
         $thumbnail = $media ? $thumbnailHelper($media, 'medium') : $defaultThumbnail;
@@ -55,18 +56,19 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
         $body = $bodyTerm ? $resource->value($bodyTerm, $bodyOptions) : $resource->displayDescription(null, $bodyOptions);
     ?>
 
-    <li class="resource <?= $resourceType ?>">
-        <div class="resource-thumbnail">
-            <?= $hyperlink->raw($thumbnail, $resource->url(), ['class' => 'resource-link']) ?>
-        </div>
-        <div class="resource-metadata">
-            <h4><?= $resource->link($heading) ?></h4>
-            <div class="dc-date"><?php echo "Date: " . (!empty($escape($resource->value("dcterms:date"))) ? date("Y-m-d", strtotime($escape($resource->value("dcterms:date")))) : "-"); ?></div>
-            <div class="description">
-                <?= $escape($body) ?>
+        <li class="resource <?= $resourceType ?>">
+            <div class="resource-thumbnail">
+                <?= $hyperlink->raw($thumbnail, $resource->url(), ['class' => 'resource-link']) ?>
             </div>
-        </div>
-    </li>
+            <div class="resource-metadata">
+                <div class="dc-date"><?php echo "Date: " . (!empty($escape($resource->value("dcterms:date"))) ? date("Y-m-d", strtotime($escape($resource->value("dcterms:date")))) : "-"); ?></div>
+
+                <h4><?= $resource->link($heading) ?></h4>
+                <div class="description">
+                    <?= $escape($body) ?>
+                </div>
+            </div>
+        </li>
 
     <?php endforeach; ?>
 </ul>
