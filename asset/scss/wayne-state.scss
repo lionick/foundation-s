@@ -895,14 +895,14 @@ footer {
 }
 
 .search-filters .filter {
-  cursor: pointer;
-  font-size: 13.08px;
+  
 
   .filter-label {
     color: #005f4d;
     background-color: #f4f4f4;
-    padding: 9px 2px 9px 12px;
-
+    padding: 9px 2px 9px 9px;
+    cursor: pointer;
+    font-size: 13.08px;
     &::after {
       content: ":";
       float: right;
@@ -910,9 +910,11 @@ footer {
   }
 
   a {
+    cursor: pointer;
+    font-size: 13.08px;
     color: #005f4d;
     background-color: #f4f4f4;
-    padding: 9px 12px 9px 2px;
+    padding: 9px 9px 9px 2px;
 
     &::after {
       content: "x";
