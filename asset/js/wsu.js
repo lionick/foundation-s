@@ -18,7 +18,7 @@
     // TODO check if this page is BROWSE
     var currentYear = new Date().getFullYear();
     // Add filter icon for small screens 
-    $(".browse").prepend('<div class="facets-icon"><span class="o-icon- fa fa-sliders fa-sliders-h" title="Open Facets" aria-label="Configure facets and sort fields"></span></div>')
+    $("body.browse").prepend('<div class="facets-icon"><span class="o-icon- fa fa-sliders fa-sliders-h" title="Open Facets" aria-label="Configure facets and sort fields"></span></div>')
     $(".facets-icon").on('click', function (){
       $(this).toggle();
       $(".sidebar-menu").toggleClass('facet-full-screen')

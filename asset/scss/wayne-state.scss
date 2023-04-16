@@ -892,7 +892,25 @@ footer {
     margin:0px;
   }
 }
-
+.search-filters .filter {
+  .filter-label {
+  color: #005f4d;
+  background-color: #f4f4f4;
+  &::after {
+    content: ":";
+    float: right;
+  }
+  }
+  a{
+    color: #005f4d;
+    background-color: #f4f4f4;
+    &::after {
+      content: "x";
+      float: right;
+      padding-left: 9px;
+    }
+  }
+}
 ul.search-facets-active {
   margin-left: 0px;
   list-style: none;
@@ -903,6 +921,10 @@ ul.search-facets-active {
   justify-content: flex-start;
   flex-wrap: wrap;
   display: flex;
+
+  li a {
+    color: #00664c;
+  }
 }
 
 .search-facets {
