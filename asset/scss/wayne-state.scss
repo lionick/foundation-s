@@ -869,7 +869,6 @@ footer {
 }
 
 // FACETS
-
 .facets-icon {
   position: fixed;
   z-index: 1000;
@@ -894,8 +893,13 @@ footer {
   }
 }
 
+.active-facets-filters {
+  font-weight: 400;
+  font-size: 1em;
+}
+
 .search-filters .filter {
-  
+
 
   .filter-label {
     color: #005f4d;
@@ -903,6 +907,7 @@ footer {
     padding: 9px 2px 9px 9px;
     cursor: pointer;
     font-size: 13.08px;
+
     &::after {
       content: ":";
       float: right;

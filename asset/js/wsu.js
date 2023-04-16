@@ -247,7 +247,9 @@
       }
     }
     setFormValues();
-
+    // Wrap div1 and span1 in a new div
+    $(".search-facets-active, .search-filters").wrap("<div class='wrapper-facets-filters'></div>");
+    $(".wrapper-facets-filters").prepend("<h4 class='active-facets-filters'>Active filters and facets:</h4>")
 
     $("#contact-us").attr("action", "#contact");
   });
