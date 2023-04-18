@@ -67,8 +67,15 @@
       $("#selected-year-from").html(fromYear);
       $("#selected-year-to").html(toYear);
     }
-
-    $("#year-slider").on('mouseup', function () {
+    var year_slider_mousedown = false;
+    // When click the year-slider, "save" it
+    $("#year-slider").on('mousedown', function () {
+      year_slider_mousedown = true;
+    })
+    $("body").on('mouseup', function () {
+      // check when dropping the link, if previously we click the year-slider
+      if(!year_slider_mousedown) return;
+      year_slider_mousedown = false;
       from = $("#selected-year-from").html()
       to = $("#selected-year-to").html()
       //q =& dcterms_date_s % 5Bfrom % 5D = 1972 & dcterms_date_s % 5Bto % 5D = 2000 & submit=
