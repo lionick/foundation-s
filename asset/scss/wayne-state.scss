@@ -1259,8 +1259,8 @@ ul.search-facets-active {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fill, 180px);
-    grid-gap: 3rem;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 2.8rem;
     padding-top: 0px;
     border-top: 0px;
     margin-top: 0px;
@@ -1270,8 +1270,20 @@ ul.search-facets-active {
     }
 
     .resource-link img {
-      height: 200px !important;
-      width: 200px !important;
+      height: 160px !important;
+      width: 160px !important;
+    }
+
+    .resource-thumbnail {
+      background-color: #eee;
+      padding: 0px !important;
+      width: 200px;
+      height: 210px;
+      -webkit-box-align: center;
+      display: flex;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
     }
 
     .resource-metadata {

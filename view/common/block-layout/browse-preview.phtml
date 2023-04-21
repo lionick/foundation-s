@@ -9,10 +9,11 @@ $currentLayout = (!isset($layoutSetting) || strpos($layoutSetting, 'grid') !== f
 $isGrid = ($currentLayout == 'grid') ? true : false;
 $queryUrl = $this->url(
     'site/resource',
-    ['controller' => $this->resourceType, 'action' => 'browse'],
+    ['controller' => 'browse', 'action' => 'browse'],
     ['query' => $this->query],
     true
 );
+
 ?>
 <div class="preview-block">
 
