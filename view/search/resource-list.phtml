@@ -51,7 +51,7 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
     foreach ($resources as $resource) :
         $resourceType = $resource->resourceName();
         $media = $resource->primaryMedia();
-        $thumbnail = $media ? $thumbnailHelper($media, 'medium') : $defaultThumbnail;
+        $thumbnail = $media ? $thumbnailHelper($media, 'square') : $defaultThumbnail;
         $heading = $headingTerm ? $resource->value($headingTerm, $headingOptions) : $resource->displayTitle(null, $headingOptions);
         $body = $bodyTerm ? $resource->value($bodyTerm, $bodyOptions) : $resource->displayDescription(null, $bodyOptions);
     ?>
