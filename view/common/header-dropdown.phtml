@@ -33,9 +33,9 @@
 
             <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
             <div id="social_media">
-                <img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" />
+                <a href="https://www.facebook.com/reutherlibrary" target="_blank"><img src="<?php echo $this->assetUrl('img/icons/facebook_icon.svg'); ?>" /></a>
                 <img src="<?php echo $this->assetUrl('img/icons/instagram_icon.svg'); ?>" />
-                <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" />
+                <a href="https://twitter.com/ReutherLibrary" target="_blank"> <img src="<?php echo $this->assetUrl('img/icons/twitter_icon.svg'); ?>" /></a>
                 <img src="<?php echo $this->assetUrl('img/icons//youtube_icon.svg'); ?>" />
                 <div class="search">
                     <?php echo $this->partial('common/search-form'); ?>
