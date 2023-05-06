@@ -55,7 +55,8 @@ header {
     top: 0px;
     margin: 0px;
     padding: 10px 30px;
-    transform: translate(0%, 0%);
+    left: 50%;
+    transform: translateX(-50%);
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 97%);
     align-items: flex-start;
     flex-wrap: wrap;
@@ -1123,6 +1124,10 @@ ul.search-facets-active {
 .image-slider {
   width: 100%;
   position: relative;
+  max-width: 106rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
 
   .slide_viewer {
     height: 500px;
@@ -1133,7 +1138,10 @@ ul.search-facets-active {
   .slide_group {
     height: 100%;
     position: relative;
+    margin: auto;
     width: 100%;
+    max-width: 106rem;
+    background-color: black;
   }
 
   .slide {
