@@ -726,8 +726,22 @@ footer {
   .site-title img {
     width: auto;
     margin: 0.5rem 0;
+    max-height: 10.5rem;
   }
-
+  .logo-text {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1em!important;
+  }
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .grid-x {
+    align-items: center;
+  }
   .acknowledgement-container {
     .grid-x {
       min-height: 14rem;
