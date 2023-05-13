@@ -25,15 +25,15 @@ body {
 }
 
 a {
-  color: map-get($wayne-palette, brown-001);
+  color: #00594e;
 
   &:hover,
   &:focus {
-    color: #fada7c;
+    color: #00594e;
   }
 
   :active {
-    color: #ffcd34;
+    color: #00594e;
   }
 }
 
@@ -69,7 +69,6 @@ header {
         height: 21px;
       }
     }
-
   }
 
   a {
@@ -86,7 +85,11 @@ header {
     padding: 0 1rem 0 0;
   }
 }
-
+.menu {
+  a:hover {
+    color:#fada7c;
+  }
+}
 .menu .active>a {
   color: #fdcd33;
   background: transparent;
