@@ -92,41 +92,70 @@ endif;
     </header>
     <div id="content" role="main">
         <div class="sidebar-menu">
-            <!-- <div class="search-form-container">
-                <div class="search-form-title">
-                    QUICK <b>SEARCH @ REUTHER</b>
-                </div>
-                
-                <?php //echo $this->partial('common/search-form'); ?>
-            </div> -->
+            
             <div class="sidebar-menu-container">
             
                 <?php
                 $nav = $site->publicNav();
                 $container = $nav->getContainer();
                 $activePage = $nav->findActive($container);
-                // if we are at a child menu, get the parent and then show all children
-                if ($activePage && $activePage['depth'] == 1) {
-                    //var_dump($activePage['page']->getParent());
-                    $activePage['page'] = $activePage['page']->getParent();
+                if ($activePage['page']->getLabel() == 'About') {
+                    ?>
+                    <div class="personnel-container">
+                        <h5>PERSONNEL</h5>
+                        <!-- <div class="personnel-walter">Walter P. Reuther Library, Archives of Labor and Urban Affairs</div> -->
+                        
+                        <?php $personnel = $this->themeSetting('personnel');
+                            // Split the text into an array of job titles and associated names
+                            $jobs = explode(",", $personnel);
+
+                            // Loop through each job title and name, and format them appropriately
+                            foreach ($jobs as $job) {
+                                $job_parts = explode("|", $job,2);
+                                $job_title = $job_parts[0];
+                                $names = explode("|", $job_parts[1]);
+                                echo "<div class='job'>" .trim($job_title) . ":</div>";
+                                ?>
+                                <ul>
+                                <?php
+                                foreach ($names as $name) {
+                                    if(!empty($name)){
+                                        echo "<li>" . $name . "</li>";
+                                    }
+                                }
+                                ?>
+                                </ul>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <?php
                 }
-                $active="";
-            
-                if (isset($activePage['depth']) && $activePage['depth'] == 0) {
-                    $active = "active";
-                }
-                ?>
-                <div class="main-menu-title"><?php echo  !empty($activePage['page']) ? '
-                    <a href="'.$activePage['page']->getHref().'" class="'.$active.'"/>'.$activePage['page']->getLabel().'</a>' : ""; ?> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> </div>
-                <?php if ($activePage) : ?>
-                    <?php if ($activePage['page']->hasPages()) : ?>
-                        <nav class="sub-menu wide">
-                            <div class="sub-menu-container" data-anchor="blocks">
-                                <?php echo $nav->menu()->setUlClass('vertical menu')->renderSubMenu(); ?>
-                            </div>
-                        </nav>
+                else {
+                    // if we are at a child menu, get the parent and then show all children
+                    if ($activePage && $activePage['depth'] == 1) {
+                        //var_dump($activePage['page']->getParent());
+                        $activePage['page'] = $activePage['page']->getParent();
+                    }
+                    $active="";
+                
+                    if (isset($activePage['depth']) && $activePage['depth'] == 0) {
+                        $active = "active";
+                    }
+                    ?>
+                    <div class="main-menu-title"><?php echo  !empty($activePage['page']) ? '
+                        <a href="'.$activePage['page']->getHref().'" class="'.$active.'"/>'.$activePage['page']->getLabel().'</a>' : ""; ?> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> </div>
+                    <?php if ($activePage) : ?>
+                        <?php if ($activePage['page']->hasPages()) : ?>
+                            <nav class="sub-menu wide">
+                                <div class="sub-menu-container" data-anchor="blocks">
+                                    <?php echo $nav->menu()->setUlClass('vertical menu')->renderSubMenu(); ?>
+                                </div>
+                            </nav>
+                        <?php endif; ?>
                     <?php endif; ?>
-                <?php endif; ?>
+                <?php } ?>
             </div>
             <div class="sidebar-last-items">
                 <div class="last-items-title">LATEST UPDATES</div>

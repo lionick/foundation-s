@@ -37,8 +37,6 @@ a {
   }
 }
 
-
-
 header {
   padding: 0rem;
   background-color: #000;
@@ -494,22 +492,6 @@ i .fa {
   min-height: 14rem;
   text-align: center;
   padding: 2em;
-
-  &.about {
-    background-image: url('../img/main/aboutus_image_sized.png');
-  }
-
-  &.contact {
-    background-image: url('../img/main/contactus_image_sized.png');
-  }
-
-  &.project-team {
-    background-image: url('../img/main/projectteam_page.png');
-  }
-
-  &.introduction {
-    background-image: url('../img/main/introduction_image_sized.png');
-  }
 }
 
 .side-by-side-container {
@@ -639,6 +621,30 @@ i .fa {
       border-bottom-right-radius: 0;
     }
 
+  }
+}
+
+// ABOUT PAGE 
+.about {
+  .personnel-container {
+    padding: 0em 0.6em;
+    color: #fff;
+    .job {
+      text-transform:uppercase;
+      font-size: 0.9em;
+      padding-bottom: 1em;
+    }
+    ul {
+      padding: 0 1em;
+      font-size: 0.90em;
+      ::marker {
+        color: #ffcd49;
+      }
+    }
+  }
+  h5 {
+    color: #fff;
+    font-weight: 700;
   }
 }
 
