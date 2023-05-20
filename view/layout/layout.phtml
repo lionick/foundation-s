@@ -99,7 +99,7 @@ endif;
                 $nav = $site->publicNav();
                 $container = $nav->getContainer();
                 $activePage = $nav->findActive($container);
-                if ($activePage['page']->getLabel() == 'About') {
+                if (!empty($activePage['page']) && $activePage['page']->getLabel() == 'About') {
                     ?>
                     <div class="personnel-container">
                         <h5>PERSONNEL</h5>
@@ -170,7 +170,9 @@ endif;
                         $array["body"][0]["tag"] = "h2";
                         $array["body"][0]["content"] = $resource_item->title();
                         $array["body"][1]["tag"] = "p";
-                        $array["body"][1]["content"] = $resource_item->value("dcterms:description")->value();
+                        if(!empty($resource_item->value("dcterms:description"))) {
+                            $array["body"][1]["content"] = $resource_item->value("dcterms:description")->value();
+                        }
                         array_push($timeline_objects, $array);
                     }
                 }
