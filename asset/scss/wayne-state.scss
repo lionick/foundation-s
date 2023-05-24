@@ -871,6 +871,12 @@ footer {
     background-color: #ebc722 !important;
   }
 }
+// MEDIA
+.media-list {
+  .resource-name {
+    line-break: anywhere;
+  }
+}
 
 // FACETED BROWSE PAGE
 .faceted-browse-page {
