@@ -108,7 +108,10 @@ endif;
                         <?php $personnel = $this->themeSetting('personnel');
                             // Split the text into an array of job titles and associated names
                             $jobs = explode(",", $personnel);
-
+                            if(!empty($jobs) && !empty($personnel)): ?>
+                              <h6>Walter P. Reuther Library, Archives of Labor and Urban Affairs</h6>
+                            <?php
+                            
                             // Loop through each job title and name, and format them appropriately
                             foreach ($jobs as $job) {
                                 $job_parts = explode("|", $job,2);
@@ -127,8 +130,36 @@ endif;
                                 </ul>
                                 <?php
                             }
+                          endif;
                             ?>
-                        </ul>
+                        
+                        <?php $personnel = $this->themeSetting('aj_personnel');
+                            // Split the text into an array of job titles and associated names
+                            $jobs = explode(",", $personnel);
+                            if(!empty($jobs) && !empty($personnel)): ?>
+                              <h6>Alfa Jango</h6>
+                            <?php
+                            
+                            // Loop through each job title and name, and format them appropriately
+                            foreach ($jobs as $job) {
+                                $job_parts = explode("|", $job,2);
+                                $job_title = $job_parts[0];
+                                $names = explode("|", $job_parts[1]);
+                                echo "<div class='job'>" .trim($job_title) . ":</div>";
+                                ?>
+                                <ul>
+                                <?php
+                                foreach ($names as $name) {
+                                    if(!empty($name)){
+                                        echo "<li>" . $name . "</li>";
+                                    }
+                                }
+                                ?>
+                                </ul>
+                                <?php
+                            }
+                            endif;
+                            ?>
                     </div>
                     <?php
                 }
