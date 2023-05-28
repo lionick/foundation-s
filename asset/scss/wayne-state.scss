@@ -242,14 +242,13 @@ textarea {
   background-color: #444;
 }
 
-.item.resource.show {
+.item.resource.show, .media.resource.show {
   .sidebar-menu {
     top:0px;
     .sidebar-menu-container {
       display: none;
     }
   }
-  
 }
 
 #main-content {
@@ -270,7 +269,7 @@ textarea {
   .media-render {
     margin: 20px 50px;
   }
-  
+
   // ITEM PAGE
 
   .grid-x {
