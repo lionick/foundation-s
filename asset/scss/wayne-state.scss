@@ -176,7 +176,7 @@ textarea {
       padding: 0 0.8em;
       color: #fff;
       font-size: 1em;
-
+      word-wrap: break-word;
       a:hover {
         color: #fada7c;
       }
@@ -242,17 +242,6 @@ textarea {
 
 .openbtn:hover {
   background-color: #444;
-}
-
-.item.resource.show,
-.media.resource.show {
-  .sidebar-menu {
-    top: 0px;
-
-    .sidebar-menu-container {
-      display: none;
-    }
-  }
 }
 
 #main-content {

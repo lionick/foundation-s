@@ -175,7 +175,7 @@ endif;
                         $active = "active";
                     }
                     ?>
-                    <div class="main-menu-title"><?php echo  !empty($activePage['page']) ? '
+                    <div class="main-menu-title"><?php echo !empty($activePage['page']) ? '
                         <a href="'.$activePage['page']->getHref().'" class="'.$active.'"/>'.$activePage['page']->getLabel().'</a>' : ""; ?> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> </div>
                     <?php if ($activePage) : ?>
                         <?php if ($activePage['page']->hasPages()) : ?>
@@ -191,24 +191,11 @@ endif;
             <div class="sidebar-last-items">
                 <div class="last-items-title">LATEST UPDATES</div>
                 <?php
+                
                 $categorySearch = $this->ListLastItems();
+               // var_dump($categorySearch);
                 $params = $categorySearch->getLastItemsInserted();
                 $timeline_objects = [];
-                foreach ($params['resources'] as $resource_item) {
-                    if ($resource_item->value("dcterms:date") != null) {
-                        $array = [];
-                        $array["time"] = $resource_item->value("dcterms:date")->value();
-                        $array["body"][0]["tag"] = "h2";
-                        $array["body"][0]["content"] = $resource_item->title();
-                        $array["body"][1]["tag"] = "p";
-                        if(!empty($resource_item->value("dcterms:description"))) {
-                            $array["body"][1]["content"] = $resource_item->value("dcterms:description")->value();
-                        }
-                        array_push($timeline_objects, $array);
-                    }
-                }
-                $json = json_encode($timeline_objects);
-                //echo ($json);
                 echo $this->partial('common/block-layout/browse-preview', [
                     'resourceType' => $params['resourceType'],
                     'resources' => $params['resources'],

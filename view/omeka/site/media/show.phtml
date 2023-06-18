@@ -1,5 +1,7 @@
 <?php
 $translate = $this->plugin('translate');
+$itemTitle = $media->item()->title();
+$itemSet = current($media->item()->itemSets())->title();
 ?>
 <?php $this->htmlElement('body')->appendAttribute('class', 'media resource show'); ?>
 
@@ -11,3 +13,34 @@ $translate = $this->plugin('translate');
 <?php echo $media->render(); ?>
 <?php echo $media->displayValues(); ?>
 <?php $this->trigger('view.show.after'); ?>
+<script type="text/javascript">
+  var found = true;
+  var value =  '<?php echo $itemSet; ?>';
+  var url = window.location.href;
+  var baseUrl = url.split("/").slice(0, -2).join("/");
+  if (value == "Publications") {
+    sub_url = "/publications"
+  } else if (value == "Speeches/ Writings") {
+    sub_url = "/speeches-writings"
+  } else if (value == "Audio/ Moving Images") {
+    sub_url = "/audio-moving-images"
+  } else {
+    found = false;
+  }
+  if (found) {
+    var link = $("<a></a>");
+    link.attr("href", baseUrl + sub_url);
+    link.text(value);
+    link.attr("class", "active");
+    $('.sidebar-menu-container .main-menu-title').append(link).append(' > ');
+  }
+  var linkItem = $("<a></a>");
+  linkItem.attr("href", baseUrl + '/item/' + '<?php echo $media->item()->id();?>');
+  linkItem.text('<?php echo $itemTitle;?>');
+  linkItem.attr("class", "active");
+  $('.sidebar-menu-container .main-menu-title').append(linkItem).append(' > ')
+
+  var media = '<?php echo $media->displayTitle();?>'
+  $('.sidebar-menu-container .main-menu-title').append(media)
+
+</script>
