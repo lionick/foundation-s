@@ -61,7 +61,20 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
                 <?= $hyperlink->raw($thumbnail, $resource->url(), ['class' => 'resource-link']) ?>
             </div>
             <div class="resource-metadata">
-                <div class="dc-date"><?php echo "Date: " . (!empty($escape($resource->value("dcterms:date"))) ? date("Y-m-d", strtotime($escape($resource->value("dcterms:date")))) : "-"); ?></div>
+                <div class="dc-date"><?php
+                if(!empty($escape($resource->value("dcterms:date")))) {
+                  if(count(explode("-", $escape($resource->value("dcterms:date")))) == 1) {
+                    $date_metadata = date("Y", strtotime($escape($resource->value("dcterms:date"))));
+                  }
+                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 2) {
+                    $date_metadata = date("Y-m", strtotime($escape($resource->value("dcterms:date"))));
+                  }
+                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 3) {
+                    $date_metadata = date("Y-m-d", strtotime($escape($resource->value("dcterms:date"))));
+                  }
+                }
+                echo "Date: " .  (!empty($date_metadata) ? 
+                $date_metadata : "-"); ?></div>
 
                 <h4><?= $resource->link($heading) ?></h4>
                 <div class="description">
