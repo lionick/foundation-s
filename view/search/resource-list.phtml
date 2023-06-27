@@ -64,12 +64,13 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
                 <div class="dc-date"><?php
                 if(!empty($escape($resource->value("dcterms:date")))) {
                   if(count(explode("-", $escape($resource->value("dcterms:date")))) == 1) {
-                    $date_metadata = date("Y", strtotime($escape($resource->value("dcterms:date"))));
+                    $date_metadata = $escape($resource->value("dcterms:date"));
+
                   }
                   elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 2) {
                     $date_metadata = date("Y-m", strtotime($escape($resource->value("dcterms:date"))));
                   }
-                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 3) {
+                  else {
                     $date_metadata = date("Y-m-d", strtotime($escape($resource->value("dcterms:date"))));
                   }
                 }
