@@ -21,6 +21,13 @@
             <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
                 <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
             </div>
+            <?php if ($this->themeSetting('logo')) : ?>
+                <div class="site-title">
+                    <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo">
+                </div>
+            <?php else : ?>
+                <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
+            <?php endif; ?>
         </nav>
         <div class="top-bar-right" id="responsive-menu">
 
