@@ -874,7 +874,7 @@ footer {
         
         padding-bottom: 0.2em;
         color: map-get($wayne-palette, gray-003);
-        &:after {
+        &:not(:last-child)::after {
           content: "|";
           padding: 0em 1em;
         }
