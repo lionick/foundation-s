@@ -67,12 +67,14 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
                     $date_metadata = $escape($resource->value("dcterms:date"));
 
                   }
-                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 2) {
+                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 2
+                    &&  strlen(explode("-", $escape($resource->value("dcterms:date")))[1]) == 2 ) {
                     $date_metadata = date("Y-m", strtotime($escape($resource->value("dcterms:date"))));
                   }
-                  else {
+                  elseif(count(explode("-", $escape($resource->value("dcterms:date")))) == 3) {
                     $date_metadata = date("Y-m-d", strtotime($escape($resource->value("dcterms:date"))));
                   }
+                  else $date_metadata=$resource->value("dcterms:date");
                 }
                 echo "Date: " .  (!empty($date_metadata) ? 
                 $date_metadata : "-"); ?></div>
