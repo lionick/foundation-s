@@ -82,16 +82,16 @@
 
       // Define the parameters as an object
       var params = {
-        "dcterms_date_s[from]": from,
-        "dcterms_date_s[to]": to,
+        "dcterms_date_txt[from]": from,
+        "dcterms_date_txt[to]": to,
       };
 
       // Parse the URL to extract the existing parameters
       var urlParams = new URLSearchParams(window.location.search);
 
       // Update the "from" and "to" parameter values
-      urlParams.set("dcterms_date_s[from]", from);
-      urlParams.set("dcterms_date_s[to]", to);
+      urlParams.set("dcterms_date_txt[from]", from);
+      urlParams.set("dcterms_date_txt[to]", to);
 
       // Update the URL with the new parameter values
       var newUrl = window.location.pathname + "?" + urlParams.toString();
