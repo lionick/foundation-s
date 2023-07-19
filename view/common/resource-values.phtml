@@ -23,8 +23,14 @@ $labelInfo = $this->setting('property_label_information');
         <?php endif; ?>
         </dt>
         <div class="values">
-        <?php foreach ($propertyData['values'] as $value): ?>
+        <?php 
+            $i=0;
+            foreach ($propertyData['values'] as $value): ?>
+            <?php if($propertyData['property']->label() == "Date" && $i!=0): ?>
+            <?php  break;?>
+            <?php else: ?>
             <?php
+            $i++;
             $valueType = $value->type();
             $class = ['value'];
             if ('resource' == $valueType || strpos($valueType, 'resource') !== false) {
@@ -41,8 +47,13 @@ $labelInfo = $this->setting('property_label_information');
                 <?php if ($language = $value->lang()): ?>
                 <span class="language"><?php echo $language; ?></span>
                 <?php endif; ?>
+                <?php if($propertyData['property']->label() == "Date" && count($propertyData['values'])>1): ?>
+                <?php echo $value->asHtml()." to ". $propertyData['values'][count($propertyData['values'])-1];?>
+                <?php else: ?>
                 <?php echo $value->asHtml(); ?>
+                <?php endif;?>
             </dl>
+            <?php endif; ?>
         <?php endforeach; ?>
         </div>
     </div>
