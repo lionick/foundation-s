@@ -76,6 +76,10 @@ $defaultThumbnail = '<img src="' . $assetUrl('thumbnails/default.png', 'Omeka') 
                   }
                   else $date_metadata=$resource->value("dcterms:date");
                 }
+                if(count($resource->value("dcterms:date", array("all"=>true)))>1){
+                  $index = count($resource->value("dcterms:date", array("all"=>true)));
+                  $date_metadata.= " to " . $resource->value("dcterms:date", array("all"=>true))[$index-1];
+                }
                 echo "Date: " .  (!empty($date_metadata) ? 
                 $date_metadata : "-"); ?></div>
 
