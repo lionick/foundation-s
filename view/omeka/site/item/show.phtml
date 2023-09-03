@@ -81,7 +81,7 @@ if ($galleryDisplay) {
     <?php endif; ?>
   <?php else : ?>
     <?php if (count($itemMedia) > 0) : ?>
-      <div class="<?php echo ($embedMedia) ? 'media-embeds' : 'media-list' ?>">
+      <div class="<?php echo ($embedMedia) ? 'media-embeds-custom' : 'media-list' ?>" style="width:100%">
         <h4>Media</h4>
         <?php foreach ($itemMedia as $media) : ?>
           <?php echo ($embedMedia) ? $media->render() : $media->linkPretty(); ?>
