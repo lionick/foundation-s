@@ -1604,7 +1604,12 @@ ul.search-facets-active {
 }
 
 .search_description {
-  padding:20px 15px 0px 15px
+  padding:0px 15px 0px 15px
+}
+
+#search_page h3 {
+  text-transform: uppercase;
+  padding:0px
 }
 
 @media (max-width: 874px) {
