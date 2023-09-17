@@ -1600,11 +1600,11 @@ ul.search-facets-active {
   font-size: 18px;
   font-weight: bold;
   color: #00664c;
-
 }
 
 .search_description {
-  padding:0px 15px 0px 15px
+  padding:0px ;
+  color: #666;
 }
 
 #search-page h3 {
@@ -1612,6 +1612,9 @@ ul.search-facets-active {
   padding:0px
 }
 
+.search-page #search-page>div {
+  margin: 0px 50px;
+}
 @media (max-width: 874px) {
   .project-team .side-by-side-container img {
     max-width: 100%;
