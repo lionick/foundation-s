@@ -72,16 +72,16 @@ $this->headScript()->appendFile($assetUrl('js/search.js', 'AdvancedSearch'), 'te
 <?php $uri = $_SERVER['REQUEST_URI'];
 // Check if the response contains the string "speeches"
 if (strpos($uri, "speeches") !== false) {
-  echo "<div class='search_description'>".$this->themeSetting('speeches_page').'</div>';
+  echo "<div class='search_description'><h3>Speeches/ Writings</h3>".$this->themeSetting('speeches_page').'</div>';
 } 
 else if (strpos($uri, "publications") !== false) {
-  echo "<div class='search_description'>".$this->themeSetting('publications_page').'</div>';
+  echo "<div class='search_description'><h3>Publications</h3>".$this->themeSetting('publications_page').'</div>';
 }
 else if (strpos($uri, "audio") !== false) {
-  echo "<div class='search_description'>".$this->themeSetting('audio_page').'</div>';
+  echo "<div class='search_description'><h3>Audio/ Moving Image</h3>".$this->themeSetting('audio_page').'</div>';
 }
 else if (strpos($uri, "images") !== false) {
-  echo "<div class='search_description'>".$this->themeSetting('images_page').'</div>';
+  echo "<div class='search_description'><h3>Images</h3>".$this->themeSetting('images_page').'</div>';
 }
 ?>
 <?php if ($itemSet): ?>
