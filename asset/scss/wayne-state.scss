@@ -26,6 +26,7 @@ body {
 
 a {
   color: #00594e;
+
   &:hover,
   &:focus {
     color: #00594e;
@@ -176,6 +177,7 @@ textarea {
       color: #fff;
       font-size: 1em;
       word-wrap: break-word;
+
       a:hover {
         color: #fada7c;
       }
@@ -219,6 +221,10 @@ textarea {
   }
 }
 
+.page.home .sidebar-menu, .page.timeline .sidebar-menu{
+  width:320px;
+}
+
 /* Position and style the close button (top right corner) */
 .sidebar-menu .closebtn {
   position: absolute;
@@ -250,12 +256,10 @@ textarea {
   padding: 0px !important;
 
   >h1 {
-    background-color: #000;
-    color: #fff;
-    padding: 0px 50px 20px;
+    padding: 50px 50px 20px 50px;
     width: 100%;
     text-transform: uppercase;
-    font-size: 1.8em;
+    font-size: 2.2em;
   }
 
   .media-render {
@@ -492,9 +496,9 @@ i .fa {
 
 .site-title {
   img {
-      max-height: 5.5rem;
-      width: 250px;
-      margin: 1rem 0;
+    max-height: 5.5rem;
+    width: 250px;
+    margin: 1rem 0;
   }
 }
 
@@ -757,7 +761,7 @@ label,
 
   img {
     margin: 0 1rem 0 0;
-    height: 15rem!important;
+    height: 15rem !important;
     /* width: 100%; */
     clear: both;
     display: block;
@@ -852,10 +856,12 @@ footer {
       display: flex;
       align-content: flex-start;
       align-items: flex-start;
+
       .copyright-container {
         padding: 0 2 * $global-padding;
         justify-content: center;
       }
+
       .menu-footer {
         align-items: flex-start;
         display: flex;
@@ -892,9 +898,10 @@ footer {
       }
 
       .outline-item {
-        
+
         padding-bottom: 0.2em;
         color: map-get($wayne-palette, gray-003);
+
         &:not(:last-child)::after {
           content: "|";
           padding: 0em 1em;
@@ -1537,12 +1544,13 @@ ul.search-facets-active {
   label {
     padding-right: 0.5em;
   }
+
   margin-bottom: 7em;
 }
 
 // SHARE PLUGIN 
 #sharing-buttons {
-  padding-left: 1.5em!important;
+  padding-left: 1.5em !important;
 }
 
 // ITEM VIEW 
@@ -1603,18 +1611,19 @@ ul.search-facets-active {
 }
 
 .search_description {
-  padding:0px ;
+  padding: 0px;
   color: #666;
 }
 
 #search-page h3 {
   text-transform: uppercase;
-  padding:0px
+  padding: 0px
 }
 
 .search-page #search-page>div {
   margin: 0px 50px;
 }
+
 @media (max-width: 874px) {
   .project-team .side-by-side-container img {
     max-width: 100%;
@@ -1645,31 +1654,35 @@ ul.search-facets-active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    text-align: center!important;
-    justify-content: center!important;
-    align-content: center!important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-content: center !important;
+
     .menu-container {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center!important;
-      -ms-flex-pack: center!important;
-      justify-content: center!important;
-      -webkit-box-align: center!important;
-      -ms-flex-align: center!important;
-      align-items: center!important;
+      -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+      align-items: center !important;
     }
-    > div > div {
+
+    >div>div {
       text-align: center;
     }
   }
+
   .outline-item {
     display: block;
     padding-bottom: 0.2em;
     color: map-get($wayne-palette, gray-003);
+
     &:after {
-      content: ""!important;
-      padding: 0em!important;
+      content: "" !important;
+      padding: 0em !important;
     }
   }
 }

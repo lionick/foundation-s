@@ -7,14 +7,14 @@ switch ($searchType) {
         break;
     case 'sitewide':
     default:
-        $searchAction = $this->url('site/resource', ['controller' => 'index', 'action' => 'search'], true);
+        $searchAction = $site->url(). "/browse"; //$this->url('site/resource', ['controller' => 'index', 'action' => 'search'], true);
 }
 $searchValue = $this->escapeHtml($this->params()->fromQuery('fulltext_search', ''));
 ?>
 
 <form action="<?php echo $this->escapeHtml($searchAction); ?>" id="search-form" class="input-group">
-    <input type="text" name="fulltext_search" value="<?php echo $searchValue; ?>"
-        placeholder="<?php echo $translate('Search site...'); ?>"
+    <input type="text" name="q" value="<?php echo $searchValue; ?>"
+        placeholder="<?php echo $translate('Search items...'); ?>"
         aria-label="<?php echo $translate('Search'); ?>" class="input-group-field">
     <div class="input-group-button">
     <button type="submit" class="button"></button>
