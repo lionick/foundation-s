@@ -71,8 +71,8 @@ $this->headScript()->appendFile($assetUrl('js/search.js', 'AdvancedSearch'), 'te
 <?php endif; ?>
 <?php $uri = $_SERVER['REQUEST_URI'];
 // Check if the response contains the string "speeches"
-if (strpos($uri, "speeches") !== false) {
-  echo "<div class='search_description'><h3>Speeches/ Writings</h3>".$this->themeSetting('speeches_page').'</div>';
+if (strpos($uri, "president") !== false) {
+  echo "<div class='search_description'><h3>Office of the President</h3>".$this->themeSetting('speeches_page').'</div>';
 } 
 else if (strpos($uri, "publications") !== false) {
   echo "<div class='search_description'><h3>Publications</h3>".$this->themeSetting('publications_page').'</div>';
